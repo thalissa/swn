@@ -1,0 +1,36 @@
+{
+  "name": "swn",
+  "title": "Stars Without Number",
+  "description": "Stars Without Number system for FoundryVTT, compatible for both original and Revised editions.",
+  "version": "0.1.0",
+  "minimumCoreVersion": "0.8.4",
+  "compatibleCoreVersion": "0.8.9",
+  "templateVersion": 2,
+  "author": "Thalissa",
+  "esmodules": [
+    "module/swn.js"
+  ],
+  "styles": [
+    "styles/basic-style.css",
+    "styles/basic-theme.css"
+  ],
+  "packs": [],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "socket": false,
+  "initiative": "1d8",
+  "gridDistance": 10,
+  "gridUnits": "metres",
+  "primaryTokenAttribute": "resources.health",
+  "secondaryTokenAttribute": "resources.power",
+  "url": "https://github.com/thalissa/swn",
+  "manifest": "/system.json",
+  "download": "/archive.zip",
+  "readme": "https://github.com/thalissa/swn/blob/main/README.md",
+  "license": "https://github.com/thalissa/swn/blob/main/LICENSE"
+}

@@ -1,0 +1,181 @@
+.swn {
+  /* Sheet Tabs */
+  /* Items List */
+}
+.swn .window-content {
+  height: 100%;
+  padding: 5px;
+  overflow-y: hidden;
+}
+.swn form {
+  height: 100%;
+}
+.swn .sheet-header {
+  flex: 0 0 100px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+.swn .sheet-header .profile-img {
+  flex: 0 0 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+.swn .sheet-header .header-fields {
+  flex: 1;
+  height: 100px;
+}
+.swn .sheet-header h1.charname {
+  height: 50px;
+  padding: 0px;
+  margin: 5px 0;
+  border-bottom: 0;
+}
+.swn .sheet-header h1.charname input {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.swn .resource {
+  width: 50%;
+  height: 40px;
+  margin-top: 10px;
+  float: left;
+  text-align: center;
+}
+.swn .resource input {
+  width: 100px;
+  height: 28px;
+}
+.swn .tabs {
+  flex: 0 0 40px;
+}
+.swn .tabs .item {
+  line-height: 40px;
+  font-weight: bold;
+}
+.swn .tabs .item.active {
+  text-decoration: underline;
+  text-shadow: none;
+}
+.swn .sheet-body {
+  overflow: hidden;
+}
+.swn .sheet-body .tab {
+  height: 100%;
+  overflow-y: auto;
+}
+.swn .editor,
+.swn .editor-content {
+  height: 100%;
+}
+.swn .item-list {
+  list-style: none;
+  margin: 7px 0;
+  padding: 0;
+  overflow-y: auto;
+}
+.swn .item-list .item {
+  min-height: 30px;
+  line-height: 24px;
+  padding: 3px 0;
+  align-items: stretch;
+}
+.swn .item-list .item img {
+  flex: 0 0 24px;
+  margin-right: 5px;
+}
+.swn .item-list .item-name {
+  margin: 0;
+}
+.swn .item-list .item-controls {
+  flex: 0 0 36px;
+}
+.swn .item-list .item-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  flex: 2;
+  justify-content: flex-start;
+}
+.swn .item-list .item-button {
+  line-height: 1;
+  font-size: 11px;
+  flex: none;
+  width: auto;
+}
+.swn .group-header input[type="text"]::placeholder {
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+}
+.swn .group-header input[type="text"]:focus::placeholder {
+  opacity: 1;
+}
+.swn .group-controls {
+  margin: 5px;
+}
+.swn .groups-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.swn .group {
+  margin: 5px 0 0;
+  padding: 0;
+}
+.swn .group-header {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 2px;
+  padding: 2px 5px;
+}
+.swn .group-key,
+.swn .group-label {
+  font-weight: bold;
+  border: none;
+  background: transparent;
+  border-radius: 0;
+  margin-right: 6px;
+}
+.swn .group-key {
+  opacity: 0.75;
+}
+.swn .group-label {
+  flex: 2;
+}
+.swn .group-dtype {
+  height: 24px;
+  flex: 0 0 116px;
+  margin: 0 5px;
+}
+.swn.sheet.actor {
+  min-width: 560px;
+  min-height: 420px;
+}
+.swn.sheet.item {
+  min-width: 460px;
+  min-height: 400px;
+}
+.swn .attributes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-grow: 0;
+}
+.swn .attributes ol {
+  list-style: none;
+  margin: 7px 0;
+}
+.swn .attribute-group {
+  flex: 1;
+  flex-direction: column;
+}
+.swn .resource-list {
+  margin-left: 10px;
+  margin-right: 10px;
+}

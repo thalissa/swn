@@ -1,0 +1,64 @@
+{
+  "Actor": {
+    "types": ["player", "npc"],
+    "player": {
+      "biography": "",
+      "health": {
+        "value": 10,
+        "min": 0,
+        "max": 10
+      },
+      "power": {
+        "value": 5,
+        "min": 0,
+        "max": 5
+      },
+      "attributes": {
+        "str": {
+          "value": 11
+        },
+        "con": {
+          "value": 12
+        },
+        "dex": {
+          "value": 13
+        },
+        "cha": {
+          "value": 14
+        },
+        "int": {
+          "value": 15
+        },
+        "wis": {
+          "value": 16
+        }
+      },
+      "groups": {}
+    },
+    "npc": {
+      "biography": "",
+      "health": {
+        "value": 12,
+        "min": 0,
+        "max": 12
+      },
+      "power": {
+        "value": 5,
+        "min": 0,
+        "max": 5
+      },
+      "attributes": {},
+      "groups": {}
+    }
+  },
+  "Item": {
+    "types": ["item"],
+    "item": {
+      "description": "",
+      "quantity": 1,
+      "weight": 0,
+      "attributes": {},
+      "groups": {}
+    }
+  }
+}

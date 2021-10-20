@@ -1,0 +1,31 @@
+.swn .tabs {
+  border-top: 1px solid #AAA;
+  border-bottom: 1px solid #AAA;
+}
+
+
+.swn .item-list .item {
+  border-bottom: 1px solid #BBB;
+}
+
+
+.swn .attributes .button {
+  border: 2px groove #f0f0e0;
+}
+
+.swn .attributes-header {
+  background: #cfcdc2;
+  border: 1px solid #AAA;
+}
+
+.swn .attributes-list li > * {
+  border-bottom: 1px solid #AAA;
+}
+
+.swn .group-header {
+  border: 1px solid #AAA;
+}
+
+.swn .group-key, .swn .group-label {
+  border-bottom: 1px solid #AAA;
+}

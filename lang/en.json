@@ -1,0 +1,36 @@
+{
+  "SETTINGS.SWNInitFormulaN": "Initiative Formula",
+  "SETTINGS.SWNInitFormulaL": "Enter an initiative formula, such as d20+@dex",
+  "SETTINGS.SWNLuckDiceN": "Luck Dice",
+  "SETTINGS.SWNLuckDiceL": "Toggle whether luck dice should be enabled or not.",
+
+  "SWN.ItemCreate": "Create Item",
+  "SWN.ItemEdit": "Edit Item",
+  "SWN.ItemDelete": "Delete Item",
+  "SWN.ItemNew": "New Item",
+
+  "SWN.NotifyInitFormulaUpdated": "Initiative formula was updated to",
+  "SWN.NotifyInitFormulaInvalid": "Initiative formula was invalid",
+  "SWN.NotifyGroupDuplicate": "Attribute group already exists.",
+  "SWN.NotifyGroupAttrDuplicate": "Attribute group already exists as an attribute.",
+  "SWN.NotifyGroupAlphanumeric": "Attribute group names may not contain spaces or periods.",
+  "SWN.NotifyAttrDuplicate": "Attribute key already exists as a group.",
+
+  "SWN.ResourceMin": "Min",
+  "SWN.ResourceValue": "Value",
+  "SWN.ResourceMax": "Max",
+
+  "SWN.PlayerActorSheet": "Player Sheet",
+  "SWN.NpcActorSheet": "NPC Sheet",
+
+  "SWN.AttributeKey": "Attribute Key",
+  "SWN.AttributeValue": "Value",
+  "SWN.AttributeLabel": "Label",
+  "SWN.AttributeDtype": "Data Type",
+
+  "SWN.DeleteGroup": "Delete group?",
+  "SWN.DeleteGroupContent": "Do you wish to delete this group? This will delete the following group and all attributes included in it: ",
+
+  "SWN.Create": "Create",
+  "SWN.New": "New"
+}
