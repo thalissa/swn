@@ -1,11 +1,6 @@
 import { ATTRIBUTE_TYPES } from "./constants.js"
 
 export class EntitySheetHelper {
-
-  
-
-  /* -------------------------------------------- */
-
   /**
    * @see ClientDocumentMixin.createDialog
    */
@@ -71,3 +66,19 @@ export class EntitySheetHelper {
     })
   }
 }
+
+// Concat helper for the sheets.
+Handlebars.registerHelper("concat", function() {
+  var outStr = ""
+  for (var arg in arguments) {
+    if (typeof arguments[arg] != "object") {
+        outStr += arguments[arg]
+    }
+  }
+  return outStr
+})
+
+
+Handlebars.registerHelper("getSetting", function(setting) {
+    return game.settings.get("swn", setting);
+});

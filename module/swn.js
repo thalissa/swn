@@ -19,7 +19,7 @@ import { createSwnMacro } from "./macro.js"
  * Init hook.
  */
 Hooks.once("init", async function() {
-  console.log(`Loading into the year 3200...`)
+  console.log("Loading into the year 3200...")
 
   /**
    * Set various default settings
@@ -105,6 +105,8 @@ Hooks.once("init", async function() {
 
   // Preload template partials
   await preloadHandlebarsTemplates()
+  
+  console.log("Stars Without Number system initialised.")
 })
 
 /**

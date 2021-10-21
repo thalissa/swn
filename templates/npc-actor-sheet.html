@@ -1,22 +1,33 @@
 <form class="flexcol {{cssClass}}" autocomplete="off">
 
     {{!-- Sheet Header --}}
-    <header class="sheet-header">
+    <header class="sheet-header flexrow">
         <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" height="100" width="100" />
-        <div class="header-fields">
+        <div class="header-fields flexcol">
+          <div class="flexrow">
             <h1 class="charname">
                 <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
             </h1>
-            <div class="resource flexcol">
-                <input type="number" name="data.health.value" value="{{systemData.health.value}}"/>
-                <input type="number" name="data.health.max" value="{{systemData.health.max}}"/>
+            <div class="resource-list">
+              <input type="text" placeholder="Class" name="data.class" value="{{systemData.class}}"/>
+              <input type="text" placeholder="Background" name="data.background" value="{{systemData.background}}"/>
             </div>
-            <div class="resource flexcol">
-                <input type="number" name="data.power.value" value="{{systemData.power.value}}"/>
-                <input type="number" name="data.power.max" value="{{systemData.power.max}}"/>
+          </div>
+          <div class="flexrow">
+            <div class="saves-list flexrow">
+              <button class="save" id="physical">Physical</button>
+              <button class="save" id="evasion">Evasion</button>
+              <button class="save" id="mental">Mental</button>
+              {{#if (getSetting "luckDiceEnabled")}}
+                <button class="save" id="luck">Luck</button>
+              {{/if}}
             </div>
+          </div>
         </div>
     </header>
+    
+    {{!-- Attributes --}}
+    {{> "systems/swn/templates/parts/sheet-attributes.html" attributes=systemData.attributes}}
 
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
@@ -84,30 +95,6 @@
             <p>
                 <a class="item-control" title="{{ localize "SWN.ItemCreate" }}" data-action="create"><i class="fas fa-plus"></i> {{ localize "SWN.ItemCreate" }}</a>
             </p>
-        </div>
-
-        {{!-- Attributes Tab --}}
-        <div class="tab attributes" data-group="primary" data-tab="attributes">
-            <header class="attributes-header flexrow">
-                <span class="attribute-key">{{localize "SWN.AttributeKey"}}</span>
-                <span class="attribute-value">{{localize "SWN.AttributeValue"}}</span>
-                <span class="attribute-label">{{localize "SWN.AttributeLabel"}}</span>
-                <span class="attribute-dtype">{{localize "SWN.AttributeDtype"}}</span>
-                <a class="attribute-control" data-action="create" data-group="{{group}}"><i class="fas fa-plus"></i></a>
-            </header>
-
-            {{!-- Render the attribute list partial. --}}
-            {{> "systems/swn/templates/parts/sheet-attributes.html" attributes=systemData.ungroupedAttributes dtypes=dtypes}}
-
-            {{!-- Render the grouped attributes partial and control. --}}
-            <div class="groups">
-                {{> "systems/swn/templates/parts/sheet-groups.html" attributes=systemData.groupedAttributes groups=systemData.groups dtypes=dtypes}}
-
-                <div class="group-controls flexrow">
-                    <input class="group-prefix" type="text" value=""/>
-                    <a class="button group-control" data-action="create-group"><i class="fas fa-plus"></i>Add Attribute Group</a>
-                </div>
-            </div>
         </div>
     </section>
 </form>

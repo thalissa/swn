@@ -3,22 +3,26 @@
     {{!-- Sheet Header --}}
     <header class="sheet-header flexrow">
         <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" height="100" width="100" />
-        <div class="header-fields flexrow">
+        <div class="header-fields flexcol">
+          <div class="flexrow">
             <h1 class="charname">
                 <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
             </h1>
             <div class="resource-list">
-              <div class="resource flexcol">
-                  <input type="number" name="data.health.value" value="{{systemData.health.value}}"/>
-                  <input type="number" name="data.health.max" value="{{systemData.health.max}}"/>
-                  <div class="resource-label">Hitpoints</div>
-              </div>
-              <div class="resource flexcol">
-                  <input type="number" name="data.power.value" value="{{systemData.power.value}}"/>
-                  <input type="number" name="data.power.max" value="{{systemData.power.max}}"/>
-                  <div class="resource-label">Power</div>
-              </div>
+              <input type="text" placeholder="Class" name="data.class" value="{{systemData.class}}"/>
+              <input type="text" placeholder="Background" name="data.background" value="{{systemData.background}}"/>
             </div>
+          </div>
+          <div class="flexrow">
+            <div class="saves-list flexrow">
+              <button class="save" id="physical">Physical</button>
+              <button class="save" id="evasion">Evasion</button>
+              <button class="save" id="mental">Mental</button>
+              {{#if (getSetting "luckDiceEnabled")}}
+                <button class="save" id="luck">Luck</button>
+              {{/if}}
+            </div>
+          </div>
         </div>
     </header>
     

@@ -38,10 +38,9 @@ export class PlayerActorSheet extends ActorSheet {
 
     // Everything below here is only needed if the sheet is editable
     if ( !this.isEditable ) return
-
-    // Item Controls
-    html.find(".item-control").click(this._onItemControl.bind(this))
-    html.find(".items .rollable").on("click", this._onItemRoll.bind(this))
+    
+    // Saving throws
+    html.find(".saves-list .save").click(this._onSaveRoll.bind(this))
   }
 
   /* -------------------------------------------- */
@@ -63,7 +62,7 @@ export class PlayerActorSheet extends ActorSheet {
     switch ( button.dataset.action ) {
       case "create":
         const cls = getDocumentClass("Item")
-        return cls.create({name: game.i18n.localize("Swn.ItemNew"), type: "item"}, {parent: this.actor})
+        return cls.create({name: game.i18n.localize("SWN.ItemNew"), type: "item"}, {parent: this.actor})
       case "edit":
         return item.sheet.render(true)
       case "delete":
@@ -74,19 +73,20 @@ export class PlayerActorSheet extends ActorSheet {
   /* -------------------------------------------- */
 
   /**
-   * Listen for roll buttons on items.
+   * Listen for saving throw rolls.
    * @param {MouseEvent} event    The originating left click event
    */
-  _onItemRoll(event) {
-    let button = $(event.currentTarget)
-    const li = button.parents(".item")
-    const item = this.actor.items.get(li.data("itemId"))
-    let r = new Roll(button.data('roll'), this.actor.getRollData())
-    return r.toMessage({
-      user: game.user.id,
-      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      flavor: `<h2>${item.name}</h2><h3>${button.text()}</h3>`
-    })
+  _onSaveRoll(event) {
+    let saveType = event.target.id
+    
+    if(saveType){
+      let r = new Roll("1d20", this.actor.getRollData())
+      return r.toMessage({
+        user: game.user.id,
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        flavor: `<h2>` + game.i18n.localize(`SWN.Save.${saveType}`) + `</h2><h3>h3</h3>`
+      })
+    }
   }
 
   /* -------------------------------------------- */

@@ -3,6 +3,25 @@
   "SETTINGS.SWNInitFormulaL": "Enter an initiative formula, such as d20+@dex",
   "SETTINGS.SWNLuckDiceN": "Luck Dice",
   "SETTINGS.SWNLuckDiceL": "Toggle whether luck dice should be enabled or not.",
+  
+  "SWN.Attributes.strL": "Strength",
+  "SWN.Attributes.conL": "Constitution",
+  "SWN.Attributes.dexL": "Dexterity",
+  "SWN.Attributes.intL": "Intelligence",
+  "SWN.Attributes.wisL": "Wisdom",
+  "SWN.Attributes.chaL": "Charisma",
+  
+  "SWN.Attributes.str": "Str",
+  "SWN.Attributes.con": "Con",
+  "SWN.Attributes.dex": "Dex",
+  "SWN.Attributes.int": "Int",
+  "SWN.Attributes.wis": "Wis",
+  "SWN.Attributes.cha": "Cha",
+  
+  "SWN.Save.evasion": "Evasion",
+  "SWN.Save.physical": "Physical",
+  "SWN.Save.mental": "Mental",
+  "SWN.Save.luck": "Luck",
 
   "SWN.ItemCreate": "Create Item",
   "SWN.ItemEdit": "Edit Item",

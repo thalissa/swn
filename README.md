@@ -2,6 +2,12 @@
 Stars Without Number system for FoundryVTT, compatible for all editions and with a multitude of options for running the game!
 
 ### Changelog
+#### 0.1.2 (Ability Scores & Saving Throws & Rolls Oh My! Update)
+* Added the ability to change ability scores.
+* Added saving throws (and the luck save toggles on and off)
+* Rolling things is also now possible. Modifiers are a WIP so the saving throws don't add modifiers yet.
+* Added a handlebar helper for concatenating things and a handlebar helper for retrieving game settings.
+
 #### 0.1.1 (Quick Fix Update)
 * Changed "Changeling" to "Changelog" on the README.
 * Added the manifest link for the future.
