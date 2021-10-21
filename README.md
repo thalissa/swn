@@ -2,6 +2,9 @@
 Stars Without Number system for FoundryVTT, compatible for all editions and with a multitude of options for running the game!
 
 ### Changelog
+#### 0.1.3 (Unified Sheets Update)
+* Shoved all of the sheet functions into their own file so I can share them consistently between the player and NPC sheets.
+
 #### 0.1.2 (Ability Scores & Saving Throws & Rolls Oh My! Update)
 * Added the ability to change ability scores.
 * Added saving throws (and the luck save toggles on and off)
