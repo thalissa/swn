@@ -1,13 +1,3 @@
-## Stars Without Number
-Stars Without Number system for FoundryVTT, compatible for all editions and with a multitude of options for running the game!
-
-### Developer Notes
-If you'd like to follow my [Twitter](https://twitter.com/ThalissaRemnant), I retweet mostly tabletop stuff and cool art over there and will occasionally post updates about things I'm working on. Additionally I have a [Ko-Fi](https://ko-fi.com/thalissa) if you'd like to support me!
-
-### Contributors
-Those that assist in contributing to the project will be listed here! Though I expect no help, if anyone provides any assistance I'll be more than happy to pull code in.
-
-### Changelog
 #### 0.1.4 (How Do Ability Scores Work? Update)
 * Attribute scores now auto-generate.
 * Saving throws now add their proper modifiers when rolled.
@@ -29,3 +19,8 @@ Those that assist in contributing to the project will be listed here! Though I e
 * Added the manifest link for the future.
 
 For additional changelog notes, see CHANGELOG.md
+
+#### 0.1.0 (Beginner System Developer Update)
+* Very, very basics, modified from the publicly available [Simple Worldbuilding](https://gitlab.com/foundrynet/worldbuilding/) system for my own usage.
+* There already exists a Stars Without Number, but in the name of diversity, learning and personal preference I've decided to make my own from scratch as a conscious decision rather than modify the existing one. While this means that mine will be incomplete for a while, I hope to one day ensure that everyone can run a Stars Without Number game however they like. Until then, if you'd like a more complete system, please check out [Stars Without Number: Revised](https://github.com/Spice-King/foundry-swnr/) system.
+* There's a big to-do list. But first course of action is getting actor sheets working, and then getting them presentable. That's not included in this update, but the character sheets *exist* at the very least.

@@ -9,17 +9,17 @@
                 <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
             </h1>
             <div class="resource-list">
-              <input type="text" placeholder="Class" name="data.class" value="{{systemData.class}}"/>
-              <input type="text" placeholder="Background" name="data.background" value="{{systemData.background}}"/>
+              <input type="text" placeholder="Class" name="data.class" value="{{playerData.class}}"/>
+              <input type="text" placeholder="Background" name="data.background" value="{{playerData.background}}"/>
             </div>
           </div>
           <div class="flexrow">
             <div class="saves-list flexrow">
-              <button class="save" id="physical">Physical</button>
-              <button class="save" id="evasion">Evasion</button>
-              <button class="save" id="mental">Mental</button>
+              <button class="save" id="physical" type="button">Physical</button>
+              <button class="save" id="evasion" type="button">Evasion</button>
+              <button class="save" id="mental" type="button">Mental</button>
               {{#if (getSetting "luckDiceEnabled")}}
-                <button class="save" id="luck">Luck</button>
+                <button class="save" id="luck" type="button">Luck</button>
               {{/if}}
             </div>
           </div>
@@ -27,7 +27,7 @@
     </header>
     
     {{!-- Attributes --}}
-    {{> "systems/swn/templates/parts/sheet-attributes.html" attributes=systemData.attributes}}
+    {{> "systems/swn/templates/parts/sheet-attributes.html" attributes=playerData.attributes}}
 
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
@@ -41,7 +41,7 @@
 
         {{!-- Biography Tab --}}
         <div class="tab description" data-group="primary" data-tab="description">
-            {{editor content=systemData.biography target="data.biography" button=true owner=owner editable=editable rollData=rollData}}
+            {{editor content=playerData.biography target="data.biography" button=true owner=owner editable=editable rollData=rollData}}
         </div>
 
         {{!-- Owned Items Tab --}}
@@ -56,30 +56,16 @@
                         {{#each item.data.attributes as |itemAttr key|}}
                         {{#if itemAttr.dtype}}
                             {{#if itemAttr.isFormula}}
-                                {{!-- Use the items.name.key format for shorthand. --}}
-                                {{#if ../../shorthand}}
-                                <button class="item-button rollable" data-roll="@items.{{slugify item.name}}.{{key}}" data-label="{{ itemAttr.label }}"
-                                    title="{{itemAttr.value}}">{{itemAttr.label}}</button>
-                                {{!-- Use the items.name.attributes.key.value format otherwise. --}}
-                                {{else}}
-                                <button class="item-button rollable"
-                                    data-roll="@items.{{slugify item.name}}.attributes.{{key}}.value" data-label="{{ itemAttr.label }}"
-                                    title="{{itemAttr.value}}">{{itemAttr.label}}</button>
-                                {{/if}}
+                              <button class="item-button rollable"
+                                  data-roll="@items.{{slugify item.name}}.attributes.{{key}}.value" data-label="{{ itemAttr.label }}"
+                                  title="{{itemAttr.value}}">{{itemAttr.label}}</button>
                             {{/if}}
                         {{else}}
                             {{#each itemAttr as |itemGroupedAttr groupedKey|}}
                                 {{#if itemGroupedAttr.isFormula}}
-                                    {{!-- Use the items.name.key format for shorthand. --}}
-                                    {{#if ../../../shorthand}}
-                                    <button class="item-button rollable" data-roll="@items.{{slugify item.name}}.{{key}}.{{groupedKey}}" data-label="{{ itemGroupedAttr.label }}"
-                                        title="{{itemGroupedAttr.value}}">{{itemGroupedAttr.label}}</button>
-                                    {{!-- Use the items.name.attributes.key.value format otherwise. --}}
-                                    {{else}}
-                                    <button class="item-button rollable"
-                                        data-roll="@items.{{slugify item.name}}.attributes.{{key}}.{{groupedKey}}.value" data-label="{{ itemGroupedAttr.label }}"
-                                        title="{{itemGroupedAttr.value}}">{{itemGroupedAttr.label}}</button>
-                                    {{/if}}
+                                  <button class="item-button rollable"
+                                      data-roll="@items.{{slugify item.name}}.attributes.{{key}}.{{groupedKey}}.value" data-label="{{ itemGroupedAttr.label }}"
+                                      title="{{itemGroupedAttr.value}}">{{itemGroupedAttr.label}}</button>
                                 {{/if}}
                             {{/each}}
                         {{/if}}

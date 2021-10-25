@@ -7,13 +7,16 @@ import {ATTRIBUTE_TYPES} from "../constants.js"
  */
 export class SwnActor extends ActorSheet {
   /* -------------------------------------------- */
-
-  /** @inheritdoc */
+  
   getData() {
-    const context = super.getData()
-    context.systemData = context.data.data
-    context.dtypes = ATTRIBUTE_TYPES
-    return context
+    this.computeModifiers()
+    
+    const data = super.getData()
+            
+    data.playerData = data.data.data
+    data.dtypes = ATTRIBUTE_TYPES
+    
+    return data
   }
 
   /* -------------------------------------------- */
@@ -28,6 +31,50 @@ export class SwnActor extends ActorSheet {
     // Saving throws
     html.find(".saves-list .save").click(this._onSaveRoll.bind(this))
   }
+
+  
+  /* -------------------------------------------- */
+  
+  _valueFromTable(table, val){
+    let output
+    
+    // Cycles through the table with the value provided
+    for (let i = 0; i <= val; i++) {
+      if (table[i] != undefined) {
+        output = table[i]
+      }
+    }
+    return output
+  }
+
+  computeModifiers(){
+    // NPCs, ships, etcetera don't need modifiers calculated since the GM will just add them in manually
+    if (this.actor.data.type != "player") {
+      return;
+    }
+    
+    // Data is data.
+    const data = this.actor.data.data;
+    
+    // Attribute to modifier table
+    const standard = {
+      0: -2,
+      3: -2,
+      4: -1,
+      8: 0,
+      14: 1,
+      18: 2,
+    }
+    
+    // Get all the attributes and translate them into their modifiers
+    data.attributes.str.mod = this._valueFromTable(standard, data.attributes.str.value)
+    data.attributes.int.mod = this._valueFromTable(standard, data.attributes.int.value)
+    data.attributes.dex.mod = this._valueFromTable(standard, data.attributes.dex.value)
+    data.attributes.cha.mod = this._valueFromTable(standard, data.attributes.cha.value)
+    data.attributes.wis.mod = this._valueFromTable(standard, data.attributes.wis.value)
+    data.attributes.con.mod = this._valueFromTable(standard, data.attributes.con.value)
+  }
+
 
   /* -------------------------------------------- */
 
@@ -57,20 +104,58 @@ export class SwnActor extends ActorSheet {
   }
 
   /* -------------------------------------------- */
+  
+  // This whole function is a sloppy way to quickly get saving throw modifiers;
+  // Going through each of the three saves, it compares the relevant attribute scores
+  // and uses that
+  getSaveMod(saveType) {
+    if(saveType){
+      const attributes = this.actor.data.data.attributes
+      
+      switch (saveType){
+        // Physical saving throws use the better of strength or constitution
+        case "physical":
+          if(attributes.str.value >= attributes.con.value){
+            return "+" + attributes.str.mod
+          } else {
+            return "+" + attributes.con.mod
+          }
+        // Evasion saving throws use the better of dexterity or intelligence
+        case "evasion":
+        if(attributes.dex.value >= attributes.int.value){
+          return "+" + attributes.dex.mod
+        } else {
+          return "+" + attributes.int.mod
+        }
+        // Mental saving throws use the better of wisdom or charisma
+        case "mental":
+        if(attributes.wis.value >= attributes.cha.value){
+          return "+" + attributes.wis.mod
+        } else {
+          return "+" + attributes.cha.mod
+        }
+        // Luck dice, or any error rolls.
+        default:
+          return ""
+      }
+    }
+  }
 
   /**
    * Listen for saving throw rolls.
-   * @param {MouseEvent} event    The originating left click event
+   * @param {MouseEvent} event    The originating event
    */
   _onSaveRoll(event) {
-    let saveType = event.target.id
+    const saveType = event.target.id
     
     if(saveType){
-      let r = new Roll("1d20", this.actor.getRollData())
+      // Use a function to grab the save type and compute the modifier.
+      let saveMod = this.getSaveMod(saveType)
+      let r = new Roll("1d20" + saveMod, this.actor.getRollData())
       return r.toMessage({
         user: game.user.id,
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: `<h2>` + game.i18n.localize(`SWN.Save.${saveType}`) + `</h2><h3>h3</h3>`
+        flavor: `<h2>` + game.i18n.localize(`SWN.Save.${saveType}`) + `</h2>`
       })
     }
   }
@@ -78,7 +163,7 @@ export class SwnActor extends ActorSheet {
   /* -------------------------------------------- */
 
   /** @inheritdoc */
-  _getSubmitData(updateData) {
+  _getSubmitData(updateData) {    
     let formData = super._getSubmitData(updateData)
     return formData
   }

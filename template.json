@@ -12,22 +12,28 @@
       "background": "",
       "attributes": {
         "str": {
-          "value": 11
+          "value": 11,
+          "mod": 0
         },
         "con": {
-          "value": 12
+          "value": 12,
+          "mod": 0
         },
         "dex": {
-          "value": 13
+          "value": 13,
+          "mod": 0
         },
         "cha": {
-          "value": 14
+          "value": 14,
+          "mod": 0
         },
         "int": {
-          "value": 15
+          "value": 15,
+          "mod": 0
         },
         "wis": {
-          "value": 16
+          "value": 16,
+          "mod": 0
         }
       },
       "groups": {}

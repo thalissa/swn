@@ -1,8 +1,8 @@
-<section class="attributes">
+<section class="attributes" data-group="primary">
   {{#each attributes as |attr key|}}
   <ol class="attribute-group">
     <li><input type="number" name="data.attributes.{{key}}.value" value="{{attr.value}}"/></li>
-    <li>{{localize (concat 'SWN.Attributes.' key)}}</li>
+    <li>{{localize (concat 'SWN.Attributes.' key)}} (<span id="{{key}}Mod" data-label="{{attr.mod}}">{{@attr.mod}}</span>)</li>
   </ol>
   {{/each}}
 </section>
