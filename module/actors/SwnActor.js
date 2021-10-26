@@ -13,7 +13,7 @@ export class SwnActor extends ActorSheet {
     
     const data = super.getData()
             
-    data.playerData = data.data.data
+    data.actorData = data.data.data
     data.dtypes = ATTRIBUTE_TYPES
     
     return data
@@ -155,7 +155,7 @@ export class SwnActor extends ActorSheet {
       return r.toMessage({
         user: game.user.id,
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: `<h2>` + game.i18n.localize(`SWN.Save.${saveType}`) + `</h2>`
+        flavor: `<h2>` + game.i18n.localize(`SWN.Save.${saveType}L`) + `</h2>`
       })
     }
   }

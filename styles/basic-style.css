@@ -171,3 +171,21 @@
   margin-top: 5px;
   margin-bottom: 5px;
 }
+.swn .bioTextfield {
+  margin-top: 15px;
+}
+.swn .inputName {
+  font-size: 12px;
+  text-align: center;
+  position: relative;
+}
+
+.swn .inputName:before {
+  content: "";
+  position: absolute;
+  left: 25%;
+  bottom: 0;
+  height: 15px;
+  width: 50%;
+  border-bottom: 1px solid;
+}

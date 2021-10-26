@@ -2,7 +2,6 @@
   "Actor": {
     "types": ["player", "npc"],
     "player": {
-      "biography": "",
       "health": {
         "value": 10,
         "min": 0,
@@ -10,6 +9,18 @@
       },
       "class": "",
       "background": "",
+      "bio": {
+        "homeworld": "",
+        "employer",
+        "species",
+        "other": ""
+      },
+      "notes": {
+        "other": ""
+      },
+      "psionics": {
+        "enabled": false
+      },
       "attributes": {
         "str": {
           "value": 11,

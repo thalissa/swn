@@ -1,3 +1,10 @@
+#### 0.1.5 (Insert Character Here Update)
+* Changed template files from .html to .hbs (mostly so that my text editor properly handles Handlebar styling)
+* Chat cards for saving throw rolls now use "<Saving Throw> Save"
+* Various styling additions.
+* Modified the sheet tabs. Now includes Bio / Notes / Equipment [That includes weapons and defense rolls] / Skills / Foci / Psionics / Settings
+* Added a bunch of character fields, since those are a little important. Bio mostly filled out, and the others I'll work on later.
+
 #### 0.1.4 (How Do Ability Scores Work? Update)
 * Attribute scores now auto-generate.
 * Saving throws now add their proper modifiers when rolled.

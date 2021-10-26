@@ -27,3 +27,7 @@
 .swn .group-key, .swn .group-label {
   border-bottom: 1px solid #AAA;
 }
+
+.swn .inputName:before {
+  border-color: #000;
+}

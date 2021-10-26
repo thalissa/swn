@@ -8,6 +8,13 @@ If you'd like to follow my [Twitter](https://twitter.com/ThalissaRemnant), I ret
 Those that assist in contributing to the project will be listed here! Though I expect no help, if anyone provides any assistance I'll be more than happy to pull code in.
 
 ### Changelog
+#### 0.1.5 (Insert Character Here Update)
+* Changed template files from .html to .hbs (mostly so that my text editor properly handles Handlebar styling)
+* Chat cards for saving throw rolls now use "<Saving Throw> Save"
+* Various styling additions.
+* Modified the sheet tabs. Now includes Bio / Notes / Equipment [That includes weapons and defense rolls] / Skills / Foci / Psionics / Settings
+* Added a bunch of character fields, since those are a little important. Bio mostly filled out, and the others I'll work on later.
+
 #### 0.1.4 (How Do Ability Scores Work? Update)
 * Attribute scores now auto-generate.
 * Saving throws now add their proper modifiers when rolled.
@@ -23,9 +30,5 @@ Those that assist in contributing to the project will be listed here! Though I e
 * Added saving throws (and the luck save toggles on and off)
 * Rolling things is also now possible. Modifiers are a WIP so the saving throws don't add modifiers yet.
 * Added a handlebar helper for concatenating things and a handlebar helper for retrieving game settings.
-
-#### 0.1.1 (Quick Fix Update)
-* Changed "Changeling" to "Changelog" on the README.
-* Added the manifest link for the future.
 
 For additional changelog notes, see CHANGELOG.md

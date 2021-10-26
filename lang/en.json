@@ -1,8 +1,12 @@
 {
-  "SETTINGS.SWNInitFormulaN": "Initiative Formula",
+  "SETTINGS.SWNInitFormula": "Initiative Formula",
   "SETTINGS.SWNInitFormulaL": "Enter an initiative formula, such as d20+@dex",
-  "SETTINGS.SWNLuckDiceN": "Luck Dice",
+  "SETTINGS.SWNLuckDice": "Luck Dice",
   "SETTINGS.SWNLuckDiceL": "Toggle whether luck dice should be enabled or not.",
+  "SETTINGS.SaveModType": "Show Save Mod Type",
+  "SETTINGS.SaveModTypeL": "Toggle whether the chat cards show what type of attribute was used for saving throws.",
+  
+  "SWN.PlayerSettings.psionics": "Psionics Tab Enabled",
   
   "SWN.Attributes.strL": "Strength",
   "SWN.Attributes.conL": "Constitution",
@@ -22,6 +26,19 @@
   "SWN.Save.physical": "Physical",
   "SWN.Save.mental": "Mental",
   "SWN.Save.luck": "Luck",
+  
+  "SWN.Save.evasionL": "Evasion Save",
+  "SWN.Save.physicalL": "Physical Save",
+  "SWN.Save.mentalL": "Mental Save",
+  "SWN.Save.luckL": "Luck Save",
+  
+  "SWN.Tabs.bio": "Bio",
+  "SWN.Tabs.notes": "Notes",
+  "SWN.Tabs.equipment": "Equipment",
+  "SWN.Tabs.skills": "Skills",
+  "SWN.Tabs.foci": "Foci",
+  "SWN.Tabs.psionics": "Psionics",
+  "SWN.Tabs.settings": "Settings",
 
   "SWN.ItemCreate": "Create Item",
   "SWN.ItemEdit": "Edit Item",

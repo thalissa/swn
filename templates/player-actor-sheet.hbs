@@ -1,0 +1,70 @@
+<form class="flexcol {{cssClass}}" autocomplete="off">
+
+    {{!-- Sheet Header --}}
+    <header class="sheet-header flexrow">
+      <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" height="100" width="100" />
+      <div class="header-fields flexcol">
+        <div class="flexrow">
+          <h1 class="charname">
+              <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
+          </h1>
+          <div class="resource-list">
+            <input type="text" placeholder="Class" name="data.class" value="{{actorData.class}}"/>
+            <input type="text" placeholder="Background" name="data.background" value="{{actorData.background}}"/>
+          </div>
+        </div>
+        <div class="flexrow">
+          <div class="saves-list flexrow">
+            <button class="save" id="physical" type="button">{{ localize "SWN.Save.physical" }}</button>
+            <button class="save" id="evasion" type="button">{{ localize "SWN.Save.evasion" }}</button>
+            <button class="save" id="mental" type="button">{{ localize "SWN.Save.mental" }}</button>
+            {{#if (getSetting "luckDiceEnabled")}}
+              <button class="save" id="luck" type="button">{{ localize "SWN.Save.luck" }}</button>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    {{!-- Attributes --}}
+    {{> "systems/swn/templates/parts/sheet-attributes.hbs" attributes=actorData.attributes}}
+
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+      <a class="item" data-tab="bio">{{ localize "SWN.Tabs.bio" }}</a>
+      <a class="item" data-tab="notes">{{ localize "SWN.Tabs.notes" }}</a>
+      <a class="item" data-tab="equipment">{{ localize "SWN.Tabs.equipment" }}</a>
+      <a class="item" data-tab="skills">{{ localize "SWN.Tabs.skills" }}</a>
+      <a class="item" data-tab="foci">{{ localize "SWN.Tabs.foci" }}</a>
+      {{#if actorData.psionics.enabled}}
+        <a class="item" data-tab="psionics">{{ localize "SWN.Tabs.psionics" }}</a>
+      {{/if}}
+      <a class="item" data-tab="settings">{{ localize "SWN.Tabs.settings" }}</a>
+    </nav>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+      {{!-- Biography Tab --}}
+      {{> "systems/swn/templates/parts/player-bio.hbs" bio=actorData.bio}}
+      
+      {{!-- Notes Tab --}}
+      {{> "systems/swn/templates/parts/player-notes.hbs" notes=actorData.notes}}
+
+      {{!-- Equipment Tab --}}
+      {{> "systems/swn/templates/parts/player-equipment.hbs" items=data.items}}
+      
+      {{!-- Skills Tab --}}
+      {{> "systems/swn/templates/parts/player-skills.hbs" skills=actorData.skills}}
+      
+      {{!-- Foci Tab --}}
+      {{> "systems/swn/templates/parts/player-foci.hbs" foci=actorData.foci}}
+      
+      {{!-- Psionics Tab --}}
+      {{#if actorData.psionics.enabled}}
+        {{> "systems/swn/templates/parts/player-psionics.hbs" psionics=actorData.psionics}}
+      {{/if}}
+      
+      {{!-- Settings Tab --}}
+      {{> "systems/swn/templates/parts/player-settings.hbs" psionics=actorData.settings}}
+    </section>
+</form>

@@ -10,7 +10,7 @@ export class NpcActorSheet extends SwnActor {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["swn", "sheet", "actor"],
-      template: "systems/swn/templates/npc-actor-sheet.html",
+      template: "systems/swn/templates/npc-actor-sheet.hbs",
       width: 600,
       height: 600,
       tabs: [{
@@ -24,8 +24,8 @@ export class NpcActorSheet extends SwnActor {
         ".attributes"
       ],
       dragDrop: [{
-          dragSelector: ".item-list .item",
-          dropSelector: null
+        dragSelector: ".item-list .item",
+        dropSelector: null
       }]
     })
   }

@@ -78,7 +78,12 @@ Handlebars.registerHelper("concat", function() {
   return outStr
 })
 
-
+// Get a world setting
 Handlebars.registerHelper("getSetting", function(setting) {
     return game.settings.get("swn", setting);
 });
+
+// Slugify a string
+Handlebars.registerHelper('slugify', function(value) {
+  return value.slugify({strict: true})
+})

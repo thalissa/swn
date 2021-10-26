@@ -56,7 +56,7 @@ Hooks.once("init", async function() {
 
   // Register initiative setting.
   game.settings.register("swn", "initFormula", {
-    name: "SETTINGS.SWNInitFormulaN",
+    name: "SETTINGS.SWNInitFormula",
     hint: "SETTINGS.SWNInitFormulaL",
     scope: "world",
     type: String,
@@ -66,11 +66,20 @@ Hooks.once("init", async function() {
   })
   
   game.settings.register("swn", "luckDiceEnabled", {
-    name: "SETTINGS.SWNLuckDiceN",
+    name: "SETTINGS.SWNLuckDice",
     hint: "SETTINGS.SWNLuckDiceL",
     scope: "world",
     type: Boolean,
     default: true,
+    config: true
+  })
+  
+  game.settings.register("swn", "showSaveModType", {
+    name: "SETTINGS.SWNSaveModType",
+    hint: "SETTINGS.SWNSaveModTypeL",
+    scope: "world",
+    type: Boolean,
+    default: false,
     config: true
   })
 
@@ -91,17 +100,6 @@ Hooks.once("init", async function() {
     }
     CONFIG.Combat.initiative.formula = formula
   }
-  
-  /**
-   * Update the luck dice setting
-   */
-
-  /**
-   * Slugify a string.
-   */
-  Handlebars.registerHelper('slugify', function(value) {
-    return value.slugify({strict: true})
-  })
 
   // Preload template partials
   await preloadHandlebarsTemplates()
