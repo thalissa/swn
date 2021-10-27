@@ -8,6 +8,9 @@ If you'd like to follow my [Twitter](https://twitter.com/ThalissaRemnant), I ret
 Those that assist in contributing to the project will be listed here! Though I expect no help, if anyone provides any assistance I'll be more than happy to pull code in.
 
 ### Changelog
+#### 0.1.6 (I'm An Idiot Update)
+* Fixed the template file preventing the game from being loaded because of a couple of typos.
+
 #### 0.1.5 (Insert Character Here Update)
 * Changed template files from .html to .hbs (mostly so that my text editor properly handles Handlebar styling)
 * Chat cards for saving throw rolls now use "<Saving Throw> Save"
@@ -24,11 +27,5 @@ Those that assist in contributing to the project will be listed here! Though I e
 
 #### 0.1.3 (Unified Sheets Update)
 * Shoved all of the sheet functions into their own file so I can share them consistently between the player and NPC sheets.
-
-#### 0.1.2 (Ability Scores & Saving Throws & Rolls Oh My! Update)
-* Added the ability to change ability scores.
-* Added saving throws (and the luck save toggles on and off)
-* Rolling things is also now possible. Modifiers are a WIP so the saving throws don't add modifiers yet.
-* Added a handlebar helper for concatenating things and a handlebar helper for retrieving game settings.
 
 For additional changelog notes, see CHANGELOG.md

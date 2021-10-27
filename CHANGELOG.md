@@ -1,3 +1,6 @@
+#### 0.1.6 (I'm An Idiot Update)
+* Fixed the template file preventing the game from being loaded because of a couple of typos.
+
 #### 0.1.5 (Insert Character Here Update)
 * Changed template files from .html to .hbs (mostly so that my text editor properly handles Handlebar styling)
 * Chat cards for saving throw rolls now use "<Saving Throw> Save"
