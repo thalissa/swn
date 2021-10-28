@@ -7,6 +7,8 @@
         "min": 0,
         "max": 10
       },
+      "level": 1,
+      "xp": 0,
       "class": "",
       "background": "",
       "bio": {
@@ -16,6 +18,9 @@
         "other": ""
       },
       "notes": {
+        "remember": "",
+        "allies": "",
+        "enemies": "",
         "other": ""
       },
       "psionics": {
@@ -47,6 +52,15 @@
           "mod": 0
         }
       },
+      "saves": {
+        "physical": 16,
+        "mental": 16,
+        "evasion": 16,
+        "luck": 16,
+        "tech": 16
+      },
+      "skills": {},
+      "specialties": {},
       "groups": {}
     },
     "npc": {

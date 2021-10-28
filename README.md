@@ -8,6 +8,15 @@ If you'd like to follow my [Twitter](https://twitter.com/ThalissaRemnant), I ret
 Those that assist in contributing to the project will be listed here! Though I expect no help, if anyone provides any assistance I'll be more than happy to pull code in.
 
 ### Changelog
+#### 0.1.7 (More Stuff Update)
+* Fixed how saving throws work to fit core SWN usage and added the option to use SWN 1e saving throw rules.
+* Refined how the saving throw function compares two attributes.
+* Removed showSaveModType from the settings because it wasn't necessary.
+* Level and XP fields added.
+* Tech saves added, since I remembered those are a thing in the original SWN.
+* Added the appropriate Notes textfields. Now includes Notes to Remember / Allies / Enemies along with an "Other" field at the bottom.
+* Skills buttons added, but not actually working yet. Still planning on how I want to do the Skills page.
+
 #### 0.1.6 (I'm An Idiot Update)
 * Fixed the template file preventing the game from being loaded because of a couple of typos.
 
@@ -24,8 +33,5 @@ Those that assist in contributing to the project will be listed here! Though I e
 * Added CHANGELOG.md to make sure the README doesn't get too filled up.
 * Added a section for future contributors and a few links to my personal stuff.
 * Also found out that setting "type='button'" on buttons fixes the "sheet rolling the first button it finds" in some browsers issue. Good to know.
-
-#### 0.1.3 (Unified Sheets Update)
-* Shoved all of the sheet functions into their own file so I can share them consistently between the player and NPC sheets.
 
 For additional changelog notes, see CHANGELOG.md

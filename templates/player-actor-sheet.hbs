@@ -6,11 +6,15 @@
       <div class="header-fields flexcol">
         <div class="flexrow">
           <h1 class="charname">
-              <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
+              <input type="text" placeholder="{{ localize "SWN.name" }}" name="name" value="{{data.name}}"/>
           </h1>
+          <div class="flexcol charlevel">
+            <input type="number" placeholder="{{ localize "SWN.level" }}" name="data.level" value="{{actorData.level}}"/>
+            <input type="number" placeholder="{{ localize "SWN.xp" }}" name="data.xp" value="{{actorData.xp}}"/>
+          </div>
           <div class="resource-list">
-            <input type="text" placeholder="Class" name="data.class" value="{{actorData.class}}"/>
-            <input type="text" placeholder="Background" name="data.background" value="{{actorData.background}}"/>
+            <input type="text" placeholder="{{ localize "SWN.class" }}" name="data.class" value="{{actorData.class}}"/>
+            <input type="text" placeholder="{{ localize "SWN.background" }}" name="data.background" value="{{actorData.background}}"/>
           </div>
         </div>
         <div class="flexrow">
@@ -18,7 +22,10 @@
             <button class="save" id="physical" type="button">{{ localize "SWN.Save.physical" }}</button>
             <button class="save" id="evasion" type="button">{{ localize "SWN.Save.evasion" }}</button>
             <button class="save" id="mental" type="button">{{ localize "SWN.Save.mental" }}</button>
-            {{#if (getSetting "luckDiceEnabled")}}
+            {{#if (getSetting "techSavesEnabled")}}
+              <button class="save" id="tech" type="button">{{ localize "SWN.Save.tech" }}</button>
+            {{/if}}
+            {{#if (getSetting "luckSavesEnabled")}}
               <button class="save" id="luck" type="button">{{ localize "SWN.Save.luck" }}</button>
             {{/if}}
           </div>

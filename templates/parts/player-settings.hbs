@@ -1,5 +1,19 @@
 <div class="tab description" data-group="primary" data-tab="settings">
-  <div>Various character-specific settings.</div>
+  {{#if (getSetting "use1eSavingThrows")}}
+    <div class="inputName">Class Saving Throws</div>
+    <div class="settings-saves flexrow">
+      {{#each actorData.saves as |save key|}}
+        <ol class="settings-saves-group">
+          <li>
+            <input type="number" name="data.saves.{{key}}" value="{{save}}"/>
+          </li>
+          <li>
+            {{localize (concat 'SWN.Save.' key)}}
+          </li>
+        </ol>
+      {{/each}}
+    </div>
+  {{/if}}
   <hr/>
   <label>
     <input type="checkbox" name="data.psionics.enabled" {{#if actorData.psionics.enabled}}checked{{/if}}/>

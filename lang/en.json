@@ -1,10 +1,20 @@
-{
+{  
   "SETTINGS.SWNInitFormula": "Initiative Formula",
-  "SETTINGS.SWNInitFormulaL": "Enter an initiative formula, such as d20+@dex",
-  "SETTINGS.SWNLuckDice": "Luck Dice",
-  "SETTINGS.SWNLuckDiceL": "Toggle whether luck dice should be enabled or not.",
-  "SETTINGS.SaveModType": "Show Save Mod Type",
-  "SETTINGS.SaveModTypeL": "Toggle whether the chat cards show what type of attribute was used for saving throws.",
+  "SETTINGS.SWNInitFormulaL": "Enter an initiative formula. By default, SWN uses 1d8.",
+  "SETTINGS.SWNLuckSaves": "Luck Saves",
+  "SETTINGS.SWNLuckSavesL": "Toggle whether luck saves should be enabled or not. Used in SWN 1e, but it's a popular houserule to keep in SWN Revised.",
+  "SETTINGS.SWNTechSaves": "Tech Saves",
+  "SETTINGS.SWNTechSavesL": "Toggle whether tech saves should be enabled or not. Used in SWN 1e. If you don't enable \"SWN 1e Saving Throws,\" then this will just roll as if it was a luck save.",
+  "SETTINGS.SWNUse1eSaves": "Use SWN 1e Saving Throws",
+  "SETTINGS.SWNUse1eSavesL": "Enabling this allows players to input their saving throw scores manually rather than contest them against 16 - level - Attribute.",
+  
+  "SWN.name": "Name",
+  "SWN.level": "Level",
+  "SWN.xp": "XP",
+  "SWN.background": "Background",
+  "SWN.class": "Class",
+  "SWN.addskill": "Add New Skill",
+  "SWN.addspecialty": "Add New Specialty",
   
   "SWN.PlayerSettings.psionics": "Psionics Tab Enabled",
   
@@ -26,11 +36,13 @@
   "SWN.Save.physical": "Physical",
   "SWN.Save.mental": "Mental",
   "SWN.Save.luck": "Luck",
+  "SWN.Save.tech": "Tech",
   
   "SWN.Save.evasionL": "Evasion Save",
   "SWN.Save.physicalL": "Physical Save",
   "SWN.Save.mentalL": "Mental Save",
   "SWN.Save.luckL": "Luck Save",
+  "SWN.Save.techL": "Tech Save",
   
   "SWN.Tabs.bio": "Bio",
   "SWN.Tabs.notes": "Notes",

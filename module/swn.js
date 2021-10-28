@@ -65,18 +65,27 @@ Hooks.once("init", async function() {
     onChange: formula => _SwnUpdateInit(formula, true)
   })
   
-  game.settings.register("swn", "luckDiceEnabled", {
-    name: "SETTINGS.SWNLuckDice",
-    hint: "SETTINGS.SWNLuckDiceL",
+  game.settings.register("swn", "luckSavesEnabled", {
+    name: "SETTINGS.SWNLuckSaves",
+    hint: "SETTINGS.SWNLuckSavesL",
     scope: "world",
     type: Boolean,
     default: true,
     config: true
   })
   
-  game.settings.register("swn", "showSaveModType", {
-    name: "SETTINGS.SWNSaveModType",
-    hint: "SETTINGS.SWNSaveModTypeL",
+  game.settings.register("swn", "techSavesEnabled", {
+    name: "SETTINGS.SWNTechSaves",
+    hint: "SETTINGS.SWNTechSavesL",
+    scope: "world",
+    type: Boolean,
+    default: false,
+    config: true
+  })
+  
+  game.settings.register("swn", "use1eSavingThrows", {
+    name: "SETTINGS.SWNUse1eSaves",
+    hint: "SETTINGS.SWNUse1eSavesL",
     scope: "world",
     type: Boolean,
     default: false,

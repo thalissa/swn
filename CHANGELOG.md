@@ -1,3 +1,12 @@
+#### 0.1.7 (More Stuff Update)
+* Fixed how saving throws work to fit core SWN usage and added the option to use SWN 1e saving throw rules.
+* Refined how the saving throw function compares two attributes.
+* Removed showSaveModType from the settings because it wasn't necessary.
+* Level and XP fields added.
+* Tech saves added, since I remembered those are a thing in the original SWN.
+* Added the appropriate Notes textfields. Now includes Notes to Remember / Allies / Enemies along with an "Other" field at the bottom.
+* Skills buttons added, but not actually working yet. Still planning on how I want to do the Skills page.
+
 #### 0.1.6 (I'm An Idiot Update)
 * Fixed the template file preventing the game from being loaded because of a couple of typos.
 

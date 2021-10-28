@@ -149,29 +149,28 @@
   min-width: 460px;
   min-height: 400px;
 }
-.swn .attributes {
+.swn .attributes, .swn .settings-saves {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   flex-grow: 0;
 }
-.swn .attributes ol {
+.swn .attributes ol, .swn .settings-saves ol {
   list-style: none;
   margin: 7px 0;
 }
-.swn .attribute-group {
+.swn .attribute-group, .swn .settings-saves-group {
   flex: 1;
   flex-direction: column;
   text-align: center;
 }
 .swn .resource-list {
-  margin-left: 10px;
   margin-right: 0px;
   margin-top: 5px;
   margin-bottom: 5px;
 }
-.swn .bioTextfield {
+.swn .inputTextfield {
   margin-top: 15px;
 }
 .swn .inputName {
@@ -179,7 +178,6 @@
   text-align: center;
   position: relative;
 }
-
 .swn .inputName:before {
   content: "";
   position: absolute;
@@ -188,4 +186,26 @@
   height: 15px;
   width: 50%;
   border-bottom: 1px solid;
+}
+.swn .charlevel {
+  text-align: center;
+  max-width: 50px;
+  max-height: 50px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.swn .notes .editor {
+  max-height: 150px;
+  max-width: 75%;
+  margin: auto;
+}
+.swn .skillsHeader {
+  justify-content: center;
+}
+.swn .skillsHeader button {
+  font-size: 13pt;
+  flex: 1;
+  margin: 10px 30px;
 }

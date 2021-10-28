@@ -1,5 +1,33 @@
-<div class="tab description" data-group="primary" data-tab="notes">
-  <div>This is some notes!</div>
+<div class="tab description notes" data-group="primary" data-tab="notes">
+  {{!-- Notes To Remember Textfield --}}
+  <div class="flexcol inputTextfield">
+    <div class="inputName">
+      Notes To Remember
+    </div>
+  </div>
+  {{editor content=notes.remember target="data.notes.remember" button=true owner=owner editable=editable rollData=rollData}}
   <hr/>
+  {{!-- Allies Textfield --}}
+  <div class="flexcol inputTextfield">
+    <div class="inputName">
+      Allies
+    </div>
+  </div>
+  {{editor content=notes.allies target="data.notes.allies" button=true owner=owner editable=editable rollData=rollData}}
+  <hr/>
+  {{!-- Enemies Textfield --}}
+  <div class="flexcol inputTextfield">
+    <div class="inputName">
+      Enemies
+    </div>
+  </div>
+  {{editor content=notes.enemies target="data.notes.enemies" button=true owner=owner editable=editable rollData=rollData}}
+  <hr/>
+  {{!-- Other Textfield --}}
+  <div class="flexcol inputTextfield">
+    <div class="inputName">
+      Other Notes
+    </div>
+  </div>
   {{editor content=notes.other target="data.notes.other" button=true owner=owner editable=editable rollData=rollData}}
 </div>

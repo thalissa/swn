@@ -106,37 +106,52 @@ export class SwnActor extends ActorSheet {
   /* -------------------------------------------- */
   
   // This whole function is a sloppy way to quickly get saving throw modifiers;
-  // Going through each of the three saves, it compares the relevant attribute scores
+  // Going through each of the saves, it compares the relevant attribute scores
   // and uses that
-  getSaveMod(saveType) {
+  getSaveMod(saveType, callback) {
+    let level = this.actor.data.data.level
+    let baseSave = 16
+    
     if(saveType){
-      const attributes = this.actor.data.data.attributes
-      
-      switch (saveType){
-        // Physical saving throws use the better of strength or constitution
-        case "physical":
-          if(attributes.str.value >= attributes.con.value){
-            return "+" + attributes.str.mod
-          } else {
-            return "+" + attributes.con.mod
-          }
-        // Evasion saving throws use the better of dexterity or intelligence
-        case "evasion":
-        if(attributes.dex.value >= attributes.int.value){
-          return "+" + attributes.dex.mod
-        } else {
-          return "+" + attributes.int.mod
+      if(game.settings.get("swn", "use1eSavingThrows")){
+        // SWN 1e saving throw method
+        const saves = this.actor.data.data.saves
+        
+        // This is a lot simpler; it just retrieves the class's saving throw number
+        // to compare the diceroll to.
+        switch (saveType){
+          case "physical":
+            return saves.physical
+          case "evasion":
+            return saves.evasion
+          case "mental":
+            return saves.mental
+          case "luck":
+            return saves.luck
+          case "tech":
+            return saves.tech
+          // Since by default all saves are 16 unless the class modifies it, this is
+          // good for "if all else fails..." such as if the setting somehow gets set to null
+          default:
+            return baseSave
         }
-        // Mental saving throws use the better of wisdom or charisma
-        case "mental":
-        if(attributes.wis.value >= attributes.cha.value){
-          return "+" + attributes.wis.mod
-        } else {
-          return "+" + attributes.cha.mod
+      } else {
+        const attributes = this.actor.data.data.attributes
+        
+        switch (saveType){
+          // Physical saving throws use the better of strength or constitution
+          case "physical":
+            return 16 - level - Math.max(attributes.str.mod, attributes.con.mod)
+          // Evasion saving throws use the better of dexterity or intelligence
+          case "evasion":
+            return 16 - level - Math.max(attributes.dex.mod, attributes.int.mod)
+          // Mental saving throws use the better of wisdom or charisma
+          case "mental":
+            return 16 - level - Math.max(attributes.wis.mod, attributes.cha.mod)
+          // Luck and tech saves, or any error rolls.
+          default:
+            return 16 - level
         }
-        // Luck dice, or any error rolls.
-        default:
-          return ""
       }
     }
   }
@@ -148,16 +163,16 @@ export class SwnActor extends ActorSheet {
   _onSaveRoll(event) {
     const saveType = event.target.id
     
-    if(saveType){
-      // Use a function to grab the save type and compute the modifier.
-      let saveMod = this.getSaveMod(saveType)
-      let r = new Roll("1d20" + saveMod, this.actor.getRollData())
-      return r.toMessage({
-        user: game.user.id,
-        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: `<h2>` + game.i18n.localize(`SWN.Save.${saveType}L`) + `</h2>`
-      })
-    }
+    // Roll a 1d20, since saving throws will always be a flat 1d20 verses the saving throw
+    let r = new Roll("1d20", this.actor.getRollData())
+    
+    // Generate a new message using the roll and use a function to retrieve the saving throw.
+    return r.toMessage({
+      user: game.user.id,
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      flavor: `<h2>` + game.i18n.localize(`SWN.Save.${saveType}L`) + `</h2>` +
+      `<h3>Must meet or beat a ` + this.getSaveMod(saveType) + ` to succeed.</h3>`
+    })
   }
 
   /* -------------------------------------------- */

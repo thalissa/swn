@@ -1,18 +1,22 @@
 <div class="tab description" data-group="primary" data-tab="bio">
   <div class="flexcol">
+    {{!-- Initial row of bio fields --}}
     <div class="flexrow">
+      {{!-- Homeworld Input --}}
       <div class="flexcol">
         <div class="inputName">
           Homeworld
         </div>
         <input type="text" name="data.bio.homeworld" value="{{actorData.bio.homeworld}}" placeholder="Homeworld"/>
       </div>
+      {{!-- Employer Input --}}
       <div class="flexcol">
         <div class="inputName">
           Employer
         </div>
         <input type="text" name="data.bio.employer" value="{{actorData.bio.employer}}" placeholder="Employer"/>
       </div>
+      {{!-- Species Input --}}
       <div class="flexcol">
         <div class="inputName">
           Species
@@ -20,7 +24,8 @@
         <input type="text" name="data.bio.species" value="{{actorData.bio.species}}" placeholder="Species"/>
       </div>
     </div>
-    <div class="flexcol bioTextfield">
+    {{!-- Other Textfield --}}
+    <div class="flexcol inputTextfield">
       <div class="inputName">
         Other Info
       </div>
