@@ -13,6 +13,9 @@ Those that assist in contributing to the project will be listed here! Though I e
 * Settings page now has more settings, such as being able to disable individual skills!
 * Psionic skills won't show up if the character doesn't have the psionic tab enabled.
 
+#### 0.1.8 (Skills Update)
+* Finally found a version of the skills page I liked. Can swap between 1e and Revised skills with a setting toggle, and individual skills can be disabled from the settings page.
+
 #### 0.1.7 (More Stuff Update)
 * Fixed how saving throws work to fit core SWN usage and added the option to use SWN 1e saving throw rules.
 * Refined how the saving throw function compares two attributes.
@@ -24,12 +27,5 @@ Those that assist in contributing to the project will be listed here! Though I e
 
 #### 0.1.6 (I'm An Idiot Update)
 * Fixed the template file preventing the game from being loaded because of a couple of typos.
-
-#### 0.1.5 (Insert Character Here Update)
-* Changed template files from .html to .hbs (mostly so that my text editor properly handles Handlebar styling)
-* Chat cards for saving throw rolls now use "<Saving Throw> Save"
-* Various styling additions.
-* Modified the sheet tabs. Now includes Bio / Notes / Equipment [That includes weapons and defense rolls] / Skills / Foci / Psionics / Settings
-* Added a bunch of character fields, since those are a little important. Bio mostly filled out, and the others I'll work on later.
 
 For additional changelog notes, see CHANGELOG.md
