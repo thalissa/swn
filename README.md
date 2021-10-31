@@ -8,6 +8,11 @@ If you'd like to follow my [Twitter](https://twitter.com/ThalissaRemnant), I ret
 Those that assist in contributing to the project will be listed here! Though I expect no help, if anyone provides any assistance I'll be more than happy to pull code in.
 
 ### Changelog
+#### 0.1.9 (Graphics Are Cool Update)
+* Updated a bunch of styling on the sheet! Now using a [cool background from Hubble](https://hubblesite.org/contents/media/images/2020/58/4778-Image) that's in the [public domain](https://hubblesite.org/copyright)! In the future I'll add a "Credits" section inside Foundry for this and any future images I use as well.
+* Settings page now has more settings, such as being able to disable individual skills!
+* Psionic skills won't show up if the character doesn't have the psionic tab enabled.
+
 #### 0.1.7 (More Stuff Update)
 * Fixed how saving throws work to fit core SWN usage and added the option to use SWN 1e saving throw rules.
 * Refined how the saving throw function compares two attributes.
@@ -26,12 +31,5 @@ Those that assist in contributing to the project will be listed here! Though I e
 * Various styling additions.
 * Modified the sheet tabs. Now includes Bio / Notes / Equipment [That includes weapons and defense rolls] / Skills / Foci / Psionics / Settings
 * Added a bunch of character fields, since those are a little important. Bio mostly filled out, and the others I'll work on later.
-
-#### 0.1.4 (How Do Ability Scores Work? Update)
-* Attribute scores now auto-generate.
-* Saving throws now add their proper modifiers when rolled.
-* Added CHANGELOG.md to make sure the README doesn't get too filled up.
-* Added a section for future contributors and a few links to my personal stuff.
-* Also found out that setting "type='button'" on buttons fixes the "sheet rolling the first button it finds" in some browsers issue. Good to know.
 
 For additional changelog notes, see CHANGELOG.md

@@ -59,8 +59,37 @@
         "luck": 16,
         "tech": 16
       },
-      "skills": {},
-      "specialties": {},
+      "skills": {
+        "adm": {"value": -1, "enabled": true},
+        "con": {"value": -1, "enabled": true}, 
+        "exe": {"value": -1, "enabled": true},
+        "fix": {"value": -1, "enabled": true},
+        "hea": {"value": -1, "enabled": true},
+        "kno": {"value": -1, "enabled": true},
+        "lea": {"value": -1, "enabled": true},
+        "not": {"value": -1, "enabled": true},
+        "per": {"value": -1, "enabled": true},
+        "pil": {"value": -1, "enabled": true},
+        "pro": {"value": -1, "enabled": true},
+        "pun": {"value": -1, "enabled": true},
+        "sho": {"value": -1, "enabled": true},
+        "sne": {"value": -1, "enabled": true},
+        "sta": {"value": -1, "enabled": true},
+        "sur": {"value": -1, "enabled": true},
+        "tal": {"value": -1, "enabled": true},
+        "tra": {"value": -1, "enabled": true},
+        "wor": {"value": -1, "enabled": true},
+        "bio": {"value": -1, "enabled": true, "psionic": true},
+        "met": {"value": -1, "enabled": true, "psionic": true},
+        "pre": {"value": -1, "enabled": true, "psionic": true},
+        "tlk": {"value": -1, "enabled": true, "psionic": true},
+        "tla": {"value": -1, "enabled": true, "psionic": true},
+        "tlp": {"value": -1, "enabled": true, "psionic": true}
+      },
+      "specialties": {
+        "cul": "",
+        "wld": ""
+      },
       "groups": {}
     },
     "npc": {

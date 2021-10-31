@@ -1,5 +1,5 @@
 import { EntitySheetHelper } from "../helper.js"
-import {ATTRIBUTE_TYPES} from "../constants.js"
+import { ATTRIBUTE_TYPES } from "../constants.js"
 
 /**
  * Extend the base Actor document to support attributes and groups with a custom template creation dialog.

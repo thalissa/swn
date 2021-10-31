@@ -32,10 +32,10 @@
         </div>
       </div>
     </header>
-    
+
     {{!-- Attributes --}}
     {{> "systems/swn/templates/parts/sheet-attributes.hbs" attributes=actorData.attributes}}
-
+    
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
       <a class="item" data-tab="bio">{{ localize "SWN.Tabs.bio" }}</a>
@@ -51,6 +51,7 @@
 
     {{!-- Sheet Body --}}
     <section class="sheet-body">
+      <hr/>
       {{!-- Biography Tab --}}
       {{> "systems/swn/templates/parts/player-bio.hbs" bio=actorData.bio}}
       
@@ -61,7 +62,7 @@
       {{> "systems/swn/templates/parts/player-equipment.hbs" items=data.items}}
       
       {{!-- Skills Tab --}}
-      {{> "systems/swn/templates/parts/player-skills.hbs" skills=actorData.skills}}
+      {{> "systems/swn/templates/parts/player-skills.hbs" skills=actorData.skills specialties=actorData.specialties psionics=actorData.psionics}}
       
       {{!-- Foci Tab --}}
       {{> "systems/swn/templates/parts/player-foci.hbs" foci=actorData.foci}}
@@ -72,6 +73,6 @@
       {{/if}}
       
       {{!-- Settings Tab --}}
-      {{> "systems/swn/templates/parts/player-settings.hbs" psionics=actorData.settings}}
+      {{> "systems/swn/templates/parts/player-settings.hbs" settings=actorData.settings skills=actorData.skills}}
     </section>
 </form>
