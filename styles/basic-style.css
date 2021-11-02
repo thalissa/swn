@@ -243,6 +243,9 @@
   margin-top: 3px;
   margin-bottom: 3px;
 }
-.swn footer {
-  align-content: center;
+.skillList .skill span {
+  cursor: pointer;
+}
+.skillList .skill span:hover {
+  font-weight: bold;
 }

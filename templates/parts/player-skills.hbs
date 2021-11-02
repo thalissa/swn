@@ -11,13 +11,13 @@
             {{#if skill.psionic}}
               {{#if ../actorData.psionics.enabled}}
                 <div class="flexrow skill psionic">
-                  <span>{{localize (concat "SWN.Skills." key)}}</span>
+                  <span id="{{key}}">{{localize (concat "SWN.Skills." key)}}</span>
                   <input type="number" name="data.skills.{{key}}.value" value="{{skill.value}}"></input>
                 </div>
               {{/if}}
             {{else}}
               <div class="flexrow skill">
-                <span>{{localize (concat "SWN.Skills." key)}}</span>
+                <span id="{{key}}">{{localize (concat "SWN.Skills." key)}}</span>
                 <input type="number" name="data.skills.{{key}}.value" value="{{skill.value}}"></input>
               </div>
             {{/if}}
@@ -31,8 +31,9 @@
         {{!-- Specialties are given special treatment. --}}
         {{#each specialties as |specialty key|}}
           <div class="flexrow skill">
-            <span>{{localize (concat "SWN.Specialties." key)}}</span>
-            <input type="text" name="data.specialties.{{key}}" value="{{specialty}}"></input>
+            <span id="{{key}}">{{localize (concat "SWN.Skills." key)}}</span>
+            <input type="number" name="data.specialties.{{key}}.value" value="{{specialty.value}}"></input>
+            <input type="text" name="data.specialties.{{key}}.contents" value="{{specialty.contents}}"></input>
           </div>
         {{/each}}
       </div>

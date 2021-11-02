@@ -15,6 +15,9 @@
   "SWN.class": "Class",
   "SWN.addskill": "Add New Skill",
   "SWN.addspecialty": "Add New Specialty",
+  "SWN.attribute": "Attribute",
+  "SWN.cancel": "Cancel",
+  "SWN.select": "Select",
   
   "SWN.PlayerSettings.psionics": "Psionics Enabled",
   
@@ -70,8 +73,8 @@
   "SWN.Skills.tla": "Telepathy",
   "SWN.Skills.tlp": "Teleportation",
   
-  "SWN.Specialties.cul": "Culture",
-  "SWN.Specialties.wld": "World",
+  "SWN.Skills.cul": "Culture",
+  "SWN.Skills.wld": "World",
   
   "SWN.Tabs.bio": "Bio",
   "SWN.Tabs.notes": "Notes",

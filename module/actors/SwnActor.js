@@ -30,6 +30,8 @@ export class SwnActor extends ActorSheet {
     
     // Saving throws
     html.find(".saves-list .save").click(this._onSaveRoll.bind(this))
+    // Skill checks
+    html.find(".skillList .skill span").click(this._onSkillRoll.bind(this))
   }
 
   
@@ -75,7 +77,6 @@ export class SwnActor extends ActorSheet {
     data.attributes.con.mod = this._valueFromTable(standard, data.attributes.con.value)
   }
 
-
   /* -------------------------------------------- */
 
   /**
@@ -108,7 +109,7 @@ export class SwnActor extends ActorSheet {
   // This whole function is a sloppy way to quickly get saving throw modifiers;
   // Going through each of the saves, it compares the relevant attribute scores
   // and uses that
-  getSaveMod(saveType, callback) {
+  getSaveMod(saveType) {
     let level = this.actor.data.data.level
     let baseSave = 16
     
@@ -155,6 +156,24 @@ export class SwnActor extends ActorSheet {
       }
     }
   }
+  
+  // Grab a skill modifier when needed
+  getSkillMod(skillType) {
+    // Define the skill list for the actor
+    const skills = this.actor.data.data.skills
+    const specialties = this.actor.data.data.specialties
+    const baseSkill = -1
+    
+    if(skillType) {
+      if(specialties.hasOwnProperty(skillType)){
+        return specialties[skillType].value
+      } else {
+        return skills[skillType].value
+      }
+    }
+    
+    return baseSkill
+  }
 
   /**
    * Listen for saving throw rolls.
@@ -174,7 +193,92 @@ export class SwnActor extends ActorSheet {
       `<h3>Must meet or beat a ` + this.getSaveMod(saveType) + ` to succeed.</h3>`
     })
   }
+  
+  /**
+   * Listen for skill rolls
+   * @param {MouseEvent} event    The originating event
+   */
+  _onSkillRoll(event) {
+    // The type of skill needing rolled.
+    const skillType = event.target.id
+    
+    // Go through the attributes and turn them into a list of options
+    let attributes = ''
+    for (const [key, value] of Object.entries(this.actor.data.data.attributes)) {
+      attributes = attributes.concat(`<option value="${key}">${game.i18n.localize(`SWN.Attributes.${key}L`)}</option>`)
+    }
+    
+    // Generate a new dialogue to select an attribute
+    let d = new Dialog({
+     title: `Choose Attribute For Your ${game.i18n.localize(`SWN.Skills.${skillType}`)} Check`,
+     content: `
+      <form>
+        <div class="form-group">
+          <label>${game.i18n.localize(`SWN.attribute`)}</label>
+          <select id="attributeSelect">${attributes}</select>
+        </div>
+      </form>`,
+     buttons: {
+       select: {
+         icon: '<i class="fas fa-check"></i>',
+         label: game.i18n.localize(`SWN.select`),
+         callback: async (html) => {
+           const attributeType = html.find('#attributeSelect')[0].value
+           
+           // Push to the next function in rolling a skill.
+           this.rollSkill(skillType, attributeType)
+         }
+       },
+       cancel: {
+         icon: '<i class="fas fa-times"></i>',
+         label: game.i18n.localize(`SWN.cancel`)
+       }
+     },
+     default: "select"
+    })
+    d.render(true)
+  }
+  
+  rollSkill(skillType, attributeType) {
+    // Set the modifiers that we need.
+    let skillMod = this.getSkillMod(skillType)
+    let attributeMod = this.actor.data.data.attributes[attributeType].mod
+    // Do math to combine all the modifiers together.
+    let combinedModifiers = skillMod + attributeMod
+    let flavourArray = []
+    
+    if(skillMod){
+      flavourArray.push(this.rollFriendlyModifiers(skillMod) + ` from ` + game.i18n.localize(`SWN.Skills.${skillType}`))
+    }
+    
+    if(attributeMod){
+      flavourArray.push(this.rollFriendlyModifiers(attributeMod) + ` from ` + game.i18n.localize(`SWN.Attributes.${attributeType}L`))
+    }
+    
+    // Skills use a 2d6 and add the modifiers.
+    let r = new Roll("2d6" + this.rollFriendlyModifiers(combinedModifiers, true), this.actor.getRollData())
+    
+    // Generate a new message using the roll and use a function to retrieve the saving throw.
+    return r.toMessage({
+      user: game.user.id,
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      flavor: `<h2>` + game.i18n.localize(`SWN.Skills.${skillType}`) + ` Check</h2>` + flavourArray.join(", ")
+    })
+  }
 
+  /* -------------------------------------------- */
+  
+  // Really simple function I keep re-using to add a plus
+  // sign if the number needs it, or keep a minus sign if it doesn't.
+  rollFriendlyModifiers(number, positiveZeros){
+    // If this value is true, then add a plus sign to 0s too.
+    if(positiveZeros){
+      return (number<0 ? "":"+") + number
+    } else {
+      return (number<=0 ? "":"+") + number
+    }
+  }
+  
   /* -------------------------------------------- */
 
   /** @inheritdoc */

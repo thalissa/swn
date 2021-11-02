@@ -1,22 +1,26 @@
 <form class="flexcol {{cssClass}}" autocomplete="off">
-
     {{!-- Sheet Header --}}
     <header class="sheet-header flexrow">
       <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" height="100" width="100" />
       <div class="header-fields flexcol">
+        <!-- Basic header details -->
         <div class="flexrow">
+          <!-- Name -->
           <h1 class="charname">
               <input type="text" placeholder="{{ localize "SWN.name" }}" name="name" value="{{data.name}}"/>
           </h1>
+          <!-- XP and level -->
           <div class="flexcol charlevel">
             <input type="number" placeholder="{{ localize "SWN.level" }}" name="data.level" value="{{actorData.level}}"/>
             <input type="number" placeholder="{{ localize "SWN.xp" }}" name="data.xp" value="{{actorData.xp}}"/>
           </div>
+          <!-- Class and background -->
           <div class="resource-list">
             <input type="text" placeholder="{{ localize "SWN.class" }}" name="data.class" value="{{actorData.class}}"/>
             <input type="text" placeholder="{{ localize "SWN.background" }}" name="data.background" value="{{actorData.background}}"/>
           </div>
         </div>
+        <!-- Saving throws -->
         <div class="flexrow">
           <div class="saves-list flexrow">
             <button class="save" id="physical" type="button">{{ localize "SWN.Save.physical" }}</button>
@@ -32,10 +36,10 @@
         </div>
       </div>
     </header>
-    
+
     {{!-- Attributes --}}
     {{> "systems/swn/templates/parts/sheet-attributes.hbs" attributes=actorData.attributes}}
-
+    
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
       <a class="item" data-tab="bio">{{ localize "SWN.Tabs.bio" }}</a>
@@ -51,27 +55,22 @@
 
     {{!-- Sheet Body --}}
     <section class="sheet-body">
+      <hr/>
       {{!-- Biography Tab --}}
       {{> "systems/swn/templates/parts/player-bio.hbs" bio=actorData.bio}}
-      
       {{!-- Notes Tab --}}
       {{> "systems/swn/templates/parts/player-notes.hbs" notes=actorData.notes}}
-
       {{!-- Equipment Tab --}}
       {{> "systems/swn/templates/parts/player-equipment.hbs" items=data.items}}
-      
       {{!-- Skills Tab --}}
-      {{> "systems/swn/templates/parts/player-skills.hbs" skills=actorData.skills}}
-      
+      {{> "systems/swn/templates/parts/player-skills.hbs" skills=actorData.skills specialties=actorData.specialties psionics=actorData.psionics}}
       {{!-- Foci Tab --}}
       {{> "systems/swn/templates/parts/player-foci.hbs" foci=actorData.foci}}
-      
       {{!-- Psionics Tab --}}
       {{#if actorData.psionics.enabled}}
         {{> "systems/swn/templates/parts/player-psionics.hbs" psionics=actorData.psionics}}
       {{/if}}
-      
       {{!-- Settings Tab --}}
-      {{> "systems/swn/templates/parts/player-settings.hbs" psionics=actorData.settings}}
+      {{> "systems/swn/templates/parts/player-settings.hbs" settings=actorData.settings skills=actorData.skills}}
     </section>
 </form>

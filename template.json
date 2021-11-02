@@ -87,8 +87,8 @@
         "tlp": {"value": -1, "enabled": true, "psionic": true}
       },
       "specialties": {
-        "cul": "",
-        "wld": ""
+        "cul": {"value": -1, "enabled": true, "contents": ""},
+        "wld": {"value": -1, "enabled": true, "contents": ""}
       },
       "groups": {}
     },
