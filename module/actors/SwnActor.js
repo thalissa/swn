@@ -1,13 +1,14 @@
 import { EntitySheetHelper } from "../helper.js"
 import { ATTRIBUTE_TYPES } from "../constants.js"
 
-/**
- * Extend the base Actor document to support attributes and groups with a custom template creation dialog.
- * @extends {Actor}
- */
+/** @extends {Actor} */
+// Extend the base Actor document to support attributes and
+// various other functions necessary to make SWN work.
 export class SwnActor extends ActorSheet {
   /* -------------------------------------------- */
+  /* Basic extensions of the base sheet functions */
   
+  /** @inheritdoc */
   getData() {
     this.computeModifiers()
     
@@ -18,10 +19,16 @@ export class SwnActor extends ActorSheet {
     
     return data
   }
-
-  /* -------------------------------------------- */
+  
+  /** @inheritdoc */
+  // Inherit _getSubmitData to handle sheet data.
+  _getSubmitData(updateData) {    
+    let formData = super._getSubmitData(updateData)
+    return formData
+  }
 
   /** @inheritdoc */
+  // Listener functions for when the sheet is opened.
   activateListeners(html) {
     super.activateListeners(html)
 
@@ -36,7 +43,20 @@ export class SwnActor extends ActorSheet {
 
   
   /* -------------------------------------------- */
+  /* Below are various utility functions used in the sheet. */
   
+  // Really simple function I keep re-using to add a plus
+  // sign if the number needs it, or keep a minus sign if it doesn't.
+  rollFriendlyModifiers(number, positiveZeros){
+    // If this value is true, then add a plus sign to 0s too.
+    if(positiveZeros){
+      return (number<0 ? "":"+") + number
+    } else {
+      return (number<=0 ? "":"+") + number
+    }
+  }
+  
+  // Function to retrieve a value when comparing one to another.
   _valueFromTable(table, val){
     let output
     
@@ -49,6 +69,7 @@ export class SwnActor extends ActorSheet {
     return output
   }
 
+  // Run through and generate modifiers when needed.
   computeModifiers(){
     // NPCs, ships, etcetera don't need modifiers calculated since the GM will just add them in manually
     if (this.actor.data.type != "player") {
@@ -78,12 +99,7 @@ export class SwnActor extends ActorSheet {
   }
 
   /* -------------------------------------------- */
-
-  /**
-   * Handle click events for Item control buttons within the Actor Sheet
-   * @param event
-   * @private
-   */
+  /* Various functions that handle buttons on the sheet. */
   _onItemControl(event) {
     event.preventDefault()
 
@@ -103,8 +119,72 @@ export class SwnActor extends ActorSheet {
         return item.delete()
     }
   }
+  
+  // Function called when a saving throw is rolled.
+  // Most of the functionality is just rolling it and getting
+  // the necessary save--see the getSaveMod function for more.
+  _onSaveRoll(event) {
+    const saveType = event.target.id
+    
+    // Roll a 1d20, since saving throws will always be a flat 1d20 verses the saving throw
+    let r = new Roll("1d20", this.actor.getRollData())
+    
+    // Generate a new message using the roll and use a function to retrieve the saving throw.
+    return r.toMessage({
+      user: game.user.id,
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      flavor: `<h2>` + game.i18n.localize(`SWN.Save.${saveType}L`) + `</h2>` +
+      `<h3>Must meet or beat a ` + this.getSaveMod(saveType) + ` to succeed.</h3>`
+    })
+  }
+  
+  // Function called when a skill is rolled.
+  // It will create a dilogue to choose an attrribute,
+  // and then pass that on to a function to handle the
+  // rest of the skill roll.
+  _onSkillRoll(event) {
+    // The type of skill needing rolled.
+    const skillType = event.target.id
+    
+    // Go through the attributes and turn them into a list of options
+    let attributes = ''
+    for (const [key, value] of Object.entries(this.actor.data.data.attributes)) {
+      attributes = attributes.concat(`<option value="${key}">${game.i18n.localize(`SWN.Attributes.${key}L`)}</option>`)
+    }
+    
+    // Generate a new dialogue to select an attribute
+    let d = new Dialog({
+     title: `Choose Attribute For Your ${game.i18n.localize(`SWN.Skills.${skillType}`)} Check`,
+     content: `
+      <form>
+        <div class="form-group">
+          <label>${game.i18n.localize(`SWN.attribute`)}</label>
+          <select id="attributeSelect">${attributes}</select>
+        </div>
+      </form>`,
+     buttons: {
+       select: {
+         icon: '<i class="fas fa-check"></i>',
+         label: game.i18n.localize(`SWN.select`),
+         callback: async (html) => {
+           const attributeType = html.find('#attributeSelect')[0].value
+           
+           // Push to the next function in rolling a skill.
+           this.rollSkill(skillType, attributeType)
+         }
+       },
+       cancel: {
+         icon: '<i class="fas fa-times"></i>',
+         label: game.i18n.localize(`SWN.cancel`)
+       }
+     },
+     default: "select"
+    })
+    d.render(true)
+  }
 
   /* -------------------------------------------- */
+  /* Various functions that assist in logic handling. */
   
   // This whole function is a sloppy way to quickly get saving throw modifiers;
   // Going through each of the saves, it compares the relevant attribute scores
@@ -174,71 +254,9 @@ export class SwnActor extends ActorSheet {
     
     return baseSkill
   }
-
-  /**
-   * Listen for saving throw rolls.
-   * @param {MouseEvent} event    The originating event
-   */
-  _onSaveRoll(event) {
-    const saveType = event.target.id
-    
-    // Roll a 1d20, since saving throws will always be a flat 1d20 verses the saving throw
-    let r = new Roll("1d20", this.actor.getRollData())
-    
-    // Generate a new message using the roll and use a function to retrieve the saving throw.
-    return r.toMessage({
-      user: game.user.id,
-      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      flavor: `<h2>` + game.i18n.localize(`SWN.Save.${saveType}L`) + `</h2>` +
-      `<h3>Must meet or beat a ` + this.getSaveMod(saveType) + ` to succeed.</h3>`
-    })
-  }
   
-  /**
-   * Listen for skill rolls
-   * @param {MouseEvent} event    The originating event
-   */
-  _onSkillRoll(event) {
-    // The type of skill needing rolled.
-    const skillType = event.target.id
-    
-    // Go through the attributes and turn them into a list of options
-    let attributes = ''
-    for (const [key, value] of Object.entries(this.actor.data.data.attributes)) {
-      attributes = attributes.concat(`<option value="${key}">${game.i18n.localize(`SWN.Attributes.${key}L`)}</option>`)
-    }
-    
-    // Generate a new dialogue to select an attribute
-    let d = new Dialog({
-     title: `Choose Attribute For Your ${game.i18n.localize(`SWN.Skills.${skillType}`)} Check`,
-     content: `
-      <form>
-        <div class="form-group">
-          <label>${game.i18n.localize(`SWN.attribute`)}</label>
-          <select id="attributeSelect">${attributes}</select>
-        </div>
-      </form>`,
-     buttons: {
-       select: {
-         icon: '<i class="fas fa-check"></i>',
-         label: game.i18n.localize(`SWN.select`),
-         callback: async (html) => {
-           const attributeType = html.find('#attributeSelect')[0].value
-           
-           // Push to the next function in rolling a skill.
-           this.rollSkill(skillType, attributeType)
-         }
-       },
-       cancel: {
-         icon: '<i class="fas fa-times"></i>',
-         label: game.i18n.localize(`SWN.cancel`)
-       }
-     },
-     default: "select"
-    })
-    d.render(true)
-  }
-  
+  // The second part of a skill roll, using data retrieved
+  // from _onSkillRoll
   rollSkill(skillType, attributeType) {
     // Set the modifiers that we need.
     let skillMod = this.getSkillMod(skillType)
@@ -264,26 +282,5 @@ export class SwnActor extends ActorSheet {
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
       flavor: `<h2>` + game.i18n.localize(`SWN.Skills.${skillType}`) + ` Check</h2>` + flavourArray.join(", ")
     })
-  }
-
-  /* -------------------------------------------- */
-  
-  // Really simple function I keep re-using to add a plus
-  // sign if the number needs it, or keep a minus sign if it doesn't.
-  rollFriendlyModifiers(number, positiveZeros){
-    // If this value is true, then add a plus sign to 0s too.
-    if(positiveZeros){
-      return (number<0 ? "":"+") + number
-    } else {
-      return (number<=0 ? "":"+") + number
-    }
-  }
-  
-  /* -------------------------------------------- */
-
-  /** @inheritdoc */
-  _getSubmitData(updateData) {    
-    let formData = super._getSubmitData(updateData)
-    return formData
   }
 }

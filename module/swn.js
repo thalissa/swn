@@ -15,16 +15,13 @@ import { createSwnMacro } from "./macro.js"
 /*  Foundry VTT Initialization                  */
 /* -------------------------------------------- */
 
-/**
- * Init hook.
- */
+/** Init hook. */
 Hooks.once("init", async function() {
   console.log("Loading into the year 3200...")
-
-  /**
-   * Set various default settings
-   */
-  // Initiative
+  
+  /** Set various default settings below here */
+  
+  // Initiative, handled by core Foundry systems.
   CONFIG.Combat.initiative = {
     formula: "1d8",
     decimals: 0
@@ -36,8 +33,11 @@ Hooks.once("init", async function() {
 
   // Define custom Entity classes
   CONFIG.Item.documentClass = SwnItem
-
+  
+  /* -------------------------------------------- */
   // Register sheet application classes
+  
+  // Actor sheets
   Actors.unregisterSheet("core", ActorSheet)
   Actors.registerSheet('swn', PlayerActorSheet, {
     label: 'Player Sheet',
@@ -51,10 +51,14 @@ Hooks.once("init", async function() {
     makeDefault: true
   })
   
+  // Item sheets
   Items.unregisterSheet("core", ItemSheet)
   Items.registerSheet("swn", SwnItemSheet, { makeDefault: true })
-
-  // Register initiative setting.
+  
+  /* -------------------------------------------- */
+  // Various settings are registered below here.
+  
+  // Initiative setting.
   game.settings.register("swn", "initFormula", {
     name: "SETTINGS.SWNInitFormula",
     hint: "SETTINGS.SWNInitFormulaL",
@@ -65,6 +69,7 @@ Hooks.once("init", async function() {
     onChange: formula => _SwnUpdateInit(formula, true)
   })
   
+  // Luck saves toggle
   game.settings.register("swn", "luckSavesEnabled", {
     name: "SETTINGS.SWNLuckSaves",
     hint: "SETTINGS.SWNLuckSavesL",
@@ -74,6 +79,7 @@ Hooks.once("init", async function() {
     config: true
   })
   
+  // Tech saves toggle
   game.settings.register("swn", "techSavesEnabled", {
     name: "SETTINGS.SWNTechSaves",
     hint: "SETTINGS.SWNTechSavesL",
@@ -83,6 +89,7 @@ Hooks.once("init", async function() {
     config: true
   })
   
+  // SWN 1e saving throw toggle
   game.settings.register("swn", "use1eSavingThrows", {
     name: "SETTINGS.SWNUse1eSaves",
     hint: "SETTINGS.SWNUse1eSavesL",
@@ -91,16 +98,15 @@ Hooks.once("init", async function() {
     default: false,
     config: true
   })
-
+  
+  /* -------------------------------------------- */
+  // Various functions that assist with updating settings.
+  
   // Retrieve and assign the initiative formula setting.
   const initFormula = game.settings.get("swn", "initFormula")
   _SwnUpdateInit(initFormula)
 
-  /**
-   * Update the initiative formula.
-   * @param {string} formula - Dice formula to evaluate.
-   * @param {boolean} notify - Whether or not to post nofications.
-   */
+  // Update the initiative formula.
   function _SwnUpdateInit(formula, notify = false) {
     const isValid = Roll.validate(formula)
     if ( !isValid ) {
@@ -113,10 +119,9 @@ Hooks.once("init", async function() {
   // Preload template partials
   await preloadHandlebarsTemplates()
   
+  // If everything's gone well, SWN has started up from here!
   console.log("Stars Without Number system initialised.")
 })
 
-/**
- * Macrobar hook.
- */
+// Macrobar hook.
 Hooks.on("hotbarDrop", (bar, data, slot) => createSwnMacro(data, slot))

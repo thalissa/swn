@@ -1,9 +1,8 @@
 import { ATTRIBUTE_TYPES } from "./constants.js"
 
+// General helpful functions for the sheets, such as Handlebar helpers.
 export class EntitySheetHelper {
-  /**
-   * @see ClientDocumentMixin.createDialog
-   */
+  /** @see ClientDocumentMixin.createDialog */
   static async createDialog(data={}, options={}) {
 
     // Collect data

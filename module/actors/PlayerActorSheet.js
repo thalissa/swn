@@ -1,11 +1,8 @@
 import { SwnActor } from "./SwnActor.js"
 
-/**
- * Extend the basic ActorSheet with some very minor modifications
- * @extends {ActorSheet}
- */
+/** @extends {ActorSheet} */
+// Extend the basic ActorSheet with some very minor modifications
 export class PlayerActorSheet extends SwnActor {
-
   /** @inheritdoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
@@ -16,18 +13,12 @@ export class PlayerActorSheet extends SwnActor {
       tabs: [{
         navSelector: ".sheet-tabs",
         contentSelector: ".sheet-body",
-        initial: "description"
+        initial: "bio"
       }],
-      scrollY: [
-        ".biography",
-        ".items",
-        ".attributes"
-      ],
       dragDrop: [{
         dragSelector: ".item-list .item",
         dropSelector: null
       }]
     })
   }
-  
 }

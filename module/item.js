@@ -1,15 +1,17 @@
 import {EntitySheetHelper} from "./helper.js"
 
-/**
- * Extend the base Item document to support attributes and groups with a custom template creation dialog.
- * @extends {Item}
- */
+/** @extends {Item} */
+// Extend the base Item document
 export class SwnItem extends Item {
-
   /** @inheritdoc */
+  // Inherit basic data and slap it together as needed.
   prepareDerivedData() {
     super.prepareDerivedData()
-    this.data.data.groups = this.data.data.groups || {}
-    this.data.data.attributes = this.data.data.attributes || {}
+  }
+  
+  /** @override */
+  // Override the default createDialogue call
+  static async createDialog(data={}, options={}) {
+    return EntitySheetHelper.createDialog.call(this, data, options);
   }
 }

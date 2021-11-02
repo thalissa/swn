@@ -8,6 +8,11 @@ If you'd like to follow my [Twitter](https://twitter.com/ThalissaRemnant), I ret
 Those that assist in contributing to the project will be listed here! Though I expect no help, if anyone provides any assistance I'll be more than happy to pull code in.
 
 ### Changelog
+#### 0.1.11 (Documentation Here Update)
+* Cleaned up documentation around the files and learned I use the word "various" too much.
+* Fixed item sheets so that they properly prepare and update data again, and fixed a styling edit.
+* Removed attributes section from item sheets; appropriate fields will be added later.
+
 #### 0.1.10 (Fix The Broken Things Update)
 * Update 0.1.8 and 0.1.9 were accidentally merged at the same time, so if you're looking for separate commits between them, now you know why the one for 0.1.8 is missing!
 * When rolling a skill, an attribute dialogue comes up that the player can select from.
@@ -20,14 +25,5 @@ Those that assist in contributing to the project will be listed here! Though I e
 * Finally found a version of the skills page I liked.
 * Settings page now has more settings, such as being able to disable individual skills!
 * Psionic skills won't show up if the character doesn't have the psionic tab enabled.
-
-#### 0.1.7 (More Stuff Update)
-* Fixed how saving throws work to fit core SWN usage and added the option to use SWN 1e saving throw rules.
-* Refined how the saving throw function compares two attributes.
-* Removed showSaveModType from the settings because it wasn't necessary.
-* Level and XP fields added.
-* Tech saves added, since I remembered those are a thing in the original SWN.
-* Added the appropriate Notes textfields. Now includes Notes to Remember / Allies / Enemies along with an "Other" field at the bottom.
-* Skills buttons added, but not actually working yet. Still planning on how I want to do the Skills page.
 
 For additional changelog notes, see CHANGELOG.md

@@ -9,6 +9,7 @@ export async function createSwnMacro(data, slot) {
   const command = `const roll = new Roll("${data.roll}", actor ? actor.getRollData() : {})
   roll.toMessage({speaker, flavor: "${data.label}"})`
   let macro = game.macros.entities.find(m => (m.name === item.label) && (m.command === command))
+  
   if (!macro) {
     macro = await Macro.create({
       name: data.label,
@@ -17,6 +18,7 @@ export async function createSwnMacro(data, slot) {
       flags: { "swn.attrMacro": true }
     })
   }
+  
   game.user.assignHotbarMacro(macro, slot)
   return false
 }

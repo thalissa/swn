@@ -1,3 +1,8 @@
+#### 0.1.11 (Documentation Here Update)
+* Cleaned up documentation around the files and learned I use the word "various" too much.
+* Fixed item sheets so that they properly prepare and update data again, and fixed a styling edit.
+* Removed attributes section from item sheets; appropriate fields will be added later.
+
 #### 0.1.10 (Fix The Broken Things Update)
 * Update 0.1.8 and 0.1.9 were accidentally merged at the same time, so if you're looking for separate commits between them, now you know why the one for 0.1.8 is missing!
 * When rolling a skill, an attribute dialogue comes up that the player can select from.
