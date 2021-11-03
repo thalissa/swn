@@ -1,58 +1,45 @@
+/* All the colours. Plan is to enable different style sheets later on */
+
+/* Core Sheet Styling */
 .swn {
   background: url("/systems/swn/resources/DarkRaysinIC5063.png") no-repeat;
   background-size: 100% 100%;
 }
-
 .swn .window-content {
   background: #0000000d;
 }
 
-.swn input, .swn button, .swn .editor, .swn .editor-content, .swn label {
-  background: #DDD;
-}
-
-.swn .inputName:before {
-  background-color: #CCC;
-}
-
-.swn .skillList, .swn .settings-saves {
-  border-color: #888;
-  background-color: #AAA;
-}
-
-.swn .attribute-group .attribute-mod {
-  background-color: #CCC;
-}
-
-.swn .tabs .item {
-  background: #CCC;
-}
-
-.swn .tabs .item.active {
-  background: #fafafa;
-}
-
-.swn .item-list .item {
-  border-bottom: 1px solid #BBB;
-}
-
+/* Header Styling */
 .swn .attributes-header {
   background: #cfcdc2;
   border: 1px solid #AAA;
 }
 
-.swn .attributes-list li > * {
-  border-bottom: 1px solid #AAA;
+/* Various input styling */
+.swn input, .swn button, .swn .editor, .swn .editor-content, .swn label, .swn .item-list {
+  background: #DDD;
 }
-
-.swn .group-header {
-  border: 1px solid #AAA;
-}
-
-.swn .group-key, .swn .group-label {
-  border-bottom: 1px solid #AAA;
-}
-
 .swn .inputName:before {
+  background-color: #CCC;
   border-color: #000;
+}
+.swn .skillList, .swn .settings-saves {
+  border-color: #888;
+  background-color: #AAA;
+}
+.swn .attribute-group .attribute-mod {
+  background-color: #CCC;
+}
+
+/* Tab styling */
+.swn .tabs .item {
+  background: #CCC;
+}
+.swn .tabs .item.active {
+  background: #fafafa;
+}
+
+/* Item page styling */
+.swn .item-list .item {
+  border-bottom: 1px solid #BBB;
 }

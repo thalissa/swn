@@ -1,4 +1,26 @@
 <div class="tab foci" data-group="primary" data-tab="foci">
-  <div>This is some foci!</div>
-  <hr/>
+  <div class="inputName">Foci and Features</div>
+  <ol class="item-list">
+    {{#if foci}}
+      <!-- Iterate through all the foci -->
+      {{#each foci as |focus id|}}
+        <li class="item flexrow" data-item-id="{{focus._id}}">
+          <!-- Focus image/name on the left side -->
+          <img src="{{focus.img}}" title="{{focus.name}}" width="24" height="24" />
+          <h4 class="item-name">{{item.name}}</h4>
+          
+          <!-- Focus controls on the right side -->
+          <div class="item-controls">
+            <a class="item-control" title="{{ localize "SWN.FocusEdit" }}" data-action="edit"><i class="fas fa-edit"></i></a>
+            <a class="item-control" title="{{ localize "SWN.FocusDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
+          </div>
+        </li>
+      {{/each}}
+    {{else}}
+      <div class="noFociNotice">{{ localize "SWN.NoFoci" }}</div>
+    {{/if}}
+  </ol>
+  <div class="inputName">
+    <a class="item-control" title="{{ localize "SWN.FocusNew" }}" data-action="create"><i class="fas fa-plus"></i> {{ localize "SWN.FocusNew" }}</a>
+  </div>
 </div>

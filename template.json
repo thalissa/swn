@@ -24,7 +24,8 @@
         "other": ""
       },
       "psionics": {
-        "enabled": false
+        "enabled": false,
+        "abilities": { }
       },
       "attributes": {
         "str": {

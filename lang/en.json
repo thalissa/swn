@@ -84,10 +84,20 @@
   "SWN.Tabs.psionics": "Psionics",
   "SWN.Tabs.settings": "Settings",
 
-  "SWN.ItemCreate": "Create Item",
+  "SWN.ItemNew": "New Item",
   "SWN.ItemEdit": "Edit Item",
   "SWN.ItemDelete": "Delete Item",
-  "SWN.ItemNew": "New Item",
+  "SWN.NoEquipment": "No equipment listed",
+  
+  "SWN.FocusNew": "New Focus",
+  "SWN.FocusEdit": "Edit Focus",
+  "SWN.FocusDelete": "Delete Focus",
+  "SWN.NoFoci": "No foci listed",
+  
+  "SWN.PsionicNew": "New Psionic Ability",
+  "SWN.PsionicEdit": "Edit Psionic Ability",
+  "SWN.PsionicDelete": "Delete Psionic Ability",
+  "SWN.NoPsionics": "No psionic abilities listed",
 
   "SWN.NotifyInitFormulaUpdated": "Initiative formula was updated to",
   "SWN.NotifyInitFormulaInvalid": "Initiative formula was invalid",

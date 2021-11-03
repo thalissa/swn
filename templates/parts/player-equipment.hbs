@@ -1,37 +1,26 @@
 <div class="tab items" data-group="primary" data-tab="equipment">
+  <div class="inputName">Stored Equipment</div>
   <ol class="item-list">
-    {{#each items as |item id|}}
-    <li class="item flexrow" data-item-id="{{item._id}}">
-      <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
-      <h4 class="item-name">{{item.name}}</h4>
-      {{!-- Iterate through all attributes on the item and output buttons for any that are formula. --}}
-      <div class="item-buttons">
-        {{#each item.data.attributes as |itemAttr key|}}
-        {{#if itemAttr.dtype}}
-          {{#if itemAttr.isFormula}}
-            <button class="item-button rollable"
-                data-roll="@items.{{slugify item.name}}.attributes.{{key}}.value" data-label="{{ itemAttr.label }}"
-                title="{{itemAttr.value}}">{{itemAttr.label}}</button>
-          {{/if}}
-        {{else}}
-          {{#each itemAttr as |itemGroupedAttr groupedKey|}}
-            {{#if itemGroupedAttr.isFormula}}
-              <button class="item-button rollable"
-                  data-roll="@items.{{slugify item.name}}.attributes.{{key}}.{{groupedKey}}.value" data-label="{{ itemGroupedAttr.label }}"
-                  title="{{itemGroupedAttr.value}}">{{itemGroupedAttr.label}}</button>
-            {{/if}}
-          {{/each}}
-        {{/if}}
-        {{/each}}
-      </div>
-      <div class="item-controls">
-        <a class="item-control" title="{{ localize "SWN.ItemEdit" }}" data-action="edit"><i class="fas fa-edit"></i></a>
-        <a class="item-control" title="{{ localize "SWN.ItemDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
-      </div>
-    </li>
-    {{/each}}
+    {{#if items}}
+      <!-- Iterate through all the items -->
+      {{#each items as |item id|}}
+        <li class="item flexrow" data-item-id="{{item._id}}">
+          <!-- Item image and name on the left side -->
+          <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+          <h4 class="item-name">{{item.name}}</h4>
+          
+          <!-- Item controls on the right side -->
+          <div class="item-controls">
+            <a class="item-control" title="{{ localize "SWN.ItemEdit" }}" data-action="edit"><i class="fas fa-edit"></i></a>
+            <a class="item-control" title="{{ localize "SWN.ItemDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
+          </div>
+        </li>
+      {{/each}}
+    {{else}}
+      <div class="noEquipmentNotice">{{ localize "SWN.NoEquipment" }}</div>
+    {{/if}}
   </ol>
-  <p>
-      <a class="item-control" title="{{ localize "SWN.ItemCreate" }}" data-action="create"><i class="fas fa-plus"></i> {{ localize "SWN.ItemCreate" }}</a>
-  </p>
+  <div class="inputName">
+    <a class="item-control" title="{{ localize "SWN.ItemNew" }}" data-action="create"><i class="fas fa-plus"></i> {{ localize "SWN.ItemNew" }}</a>
+  </div>
 </div>

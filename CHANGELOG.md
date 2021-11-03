@@ -1,3 +1,7 @@
+#### 0.1.12 (Styling Fixes Update)
+* Added comments to the style sheets and better organized them while I did that.
+* Made the pages that needed styling have them (Example: You can read the equipment list now!)
+
 #### 0.1.11 (Documentation Here Update)
 * Cleaned up documentation around the files and learned I use the word "various" too much.
 * Fixed item sheets so that they properly prepare and update data again, and fixed a styling edit.

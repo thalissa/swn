@@ -1,3 +1,6 @@
+/* Base style sheet. If a "theme" is swapped, none of these should change. */
+
+/* Core Sheet Styling */
 .swn .window-content {
   height: 100%;
   padding: 5px;
@@ -6,6 +9,16 @@
 .swn form {
   height: 100%;
 }
+.swn .sheet .actor {
+  min-width: 560px;
+  min-height: 420px;
+}
+.swn .sheet .item {
+  min-width: 460px;
+  min-height: 400px;
+}
+
+/* Header Styling */
 .swn .sheet-header {
   flex: 0 0 100px;
   overflow: hidden;
@@ -35,6 +48,13 @@
   height: 100%;
   margin: 0;
 }
+.swn .sheet-header .resource-list {
+  margin-right: 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* Tab Styling */
 .swn .tabs {
   border-top: 0px !important;
   border-bottom: 0px !important;
@@ -59,124 +79,10 @@
   overflow-y: auto;
   padding-bottom: 20px;
 }
+
+/* Various Input Styling */
 .swn .editor, .swn .editor-content {
   min-height: 100px;
-}
-.swn .item-list {
-  list-style: none;
-  margin: 7px 0;
-  padding: 0;
-  overflow-y: auto;
-}
-.swn .item-list .item {
-  min-height: 30px;
-  line-height: 24px;
-  padding: 3px 0;
-  align-items: stretch;
-}
-.swn .item-list .item img {
-  flex: 0 0 24px;
-  margin-right: 5px;
-}
-.swn .item-list .item-name {
-  margin: 0;
-}
-.swn .item-list .item-controls {
-  flex: 0 0 36px;
-}
-.swn .item-list .item-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  flex: 2;
-  justify-content: flex-start;
-}
-.swn .item-list .item-button {
-  line-height: 1;
-  font-size: 11px;
-  flex: none;
-  width: auto;
-}
-.swn .group-header input[type="text"]::placeholder {
-  opacity: 0;
-  transition: opacity 0.25s ease-in-out;
-}
-.swn .group-header input[type="text"]:focus::placeholder {
-  opacity: 1;
-}
-.swn .group-controls {
-  margin: 5px;
-}
-.swn .groups-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.swn .group {
-  margin: 5px 0 0;
-  padding: 0;
-}
-.swn .group-header {
-  align-items: center;
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 2px;
-  padding: 2px 5px;
-}
-.swn .group-key,
-.swn .group-label {
-  font-weight: bold;
-  border: none;
-  background: transparent;
-  border-radius: 0;
-  margin-right: 6px;
-}
-.swn .group-key {
-  opacity: 0.75;
-}
-.swn .group-label {
-  flex: 2;
-}
-.swn .group-dtype {
-  height: 24px;
-  flex: 0 0 116px;
-  margin: 0 5px;
-}
-.swn.sheet.actor {
-  min-width: 560px;
-  min-height: 420px;
-}
-.swn.sheet.item {
-  min-width: 460px;
-  min-height: 400px;
-}
-.swn .attributes, .swn .settings-saves {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  flex-grow: 0;
-  border: 1px solid;
-  border-radius: 7px;
-  padding: 0.5em;
-  width: 100%;
-}
-.swn .attributes ol, .swn .settings-saves ol {
-  list-style: none;
-  margin: 7px 0;
-}
-.swn .attribute-group, .swn .settings-saves-group {
-  flex: 1;
-  flex-direction: column;
-  text-align: center;
-}
-.swn .attribute-group .attribute-mod {
-  border-radius: 0px 10px;
-}
-.swn .resource-list {
-  margin-right: 0px;
-  margin-top: 5px;
-  margin-bottom: 5px;
 }
 .swn .inputTextfield {
   margin-top: 15px;
@@ -206,10 +112,99 @@
   margin-left: 10px;
   margin-right: 10px;
 }
+.swn label {
+  border-radius: 10px;
+  padding: 5px;
+}
+.swn label input[type="checkbox"] {
+    height: auto;
+}
+
+/* Header Attribute Styling and Setting Saves Styling */
+.swn .attributes, .swn .settings-saves {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-grow: 0;
+  border: 1px solid;
+  border-radius: 7px;
+  padding: 0.5em;
+  width: 100%;
+}
+.swn .attributes ol, .swn .settings-saves ol {
+  list-style: none;
+  margin: 7px 0;
+}
+.swn .attribute-group, .swn .settings-saves-group {
+  flex: 1;
+  flex-direction: column;
+  text-align: center;
+}
+.swn .attribute-group .attribute-mod {
+  border-radius: 0px 10px;
+}
+
+/* Notes Page Styling */
 .swn .notes .editor {
   max-height: 150px;
   max-width: 75%;
   margin: auto;
+}
+
+/* Equipment Page Styling */
+.swn .item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  border-radius: 7px;
+}
+.swn .item-list .item {
+  min-height: 30px;
+  line-height: 24px;
+  padding: 3px 0;
+  align-items: stretch;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.swn .item-list .item img {
+  flex: 0 0 24px;
+  margin-right: 5px;
+}
+.swn .item-list .item-name {
+  margin: 0;
+}
+.swn .item-list .item-controls {
+  flex: 0 0 36px;
+}
+.swn .item-list .item-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  flex: 2;
+  justify-content: flex-start;
+}
+.swn .item-list .item-button {
+  line-height: 1;
+  font-size: 11px;
+  flex: none;
+  width: auto;
+}
+.swn .item-list .noEquipmentNotice, .swn .item-list .noFociNotice , .swn .item-list .noPsionicsNotice {
+  text-align: center;
+  font-size: 12pt;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Skill Page Styling */
+.swn .skillList .skill span {
+  cursor: pointer;
+}
+.swn .skillList .skill span:hover {
+  font-weight: bold;
 }
 .swn .skillList {
   display: grid;
@@ -227,13 +222,8 @@
 .swn .skillList input[type="text"] {
   max-width: 150px;
 }
-.swn label {
-  border-radius: 10px;
-  padding: 5px;
-}
-.swn label input[type="checkbox"] {
-    height: auto;
-}
+
+/* Settings Page Styling */
 .swn .settings .skillList {
   text-align: left;
 }
@@ -242,10 +232,4 @@
   margin-right: 5px;
   margin-top: 3px;
   margin-bottom: 3px;
-}
-.skillList .skill span {
-  cursor: pointer;
-}
-.skillList .skill span:hover {
-  font-weight: bold;
 }
