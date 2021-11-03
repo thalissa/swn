@@ -1,4 +1,4 @@
-import {EntitySheetHelper} from "./helper.js"
+import {EntitySheetHelper} from "../helper.js"
 
 /** @extends {Item} */
 // Extend the base Item document

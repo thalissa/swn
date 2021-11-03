@@ -1,3 +1,7 @@
+#### 0.1.13 (Localizations-R-Us Update)
+* A lot of localization additions and fixes.
+* Additionally, I better separated the sheet partials between various folders.
+
 #### 0.1.12 (Styling Fixes Update)
 * Added comments to the style sheets and better organized them while I did that.
 * Made the pages that needed styling have them (Example: You can read the equipment list now!)

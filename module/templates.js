@@ -5,14 +5,14 @@ export const preloadHandlebarsTemplates = async function() {
   // Define template paths to load
   const templatePaths = [
     // Player partials
-    "systems/swn/templates/parts/sheet-attributes.hbs",
-    "systems/swn/templates/parts/player-bio.hbs",
-    "systems/swn/templates/parts/player-notes.hbs",
-    "systems/swn/templates/parts/player-equipment.hbs",
-    "systems/swn/templates/parts/player-skills.hbs",
-    "systems/swn/templates/parts/player-foci.hbs",
-    "systems/swn/templates/parts/player-psionics.hbs",
-    "systems/swn/templates/parts/player-settings.hbs"
+    "systems/swn/templates/player-parts/player-attributes.hbs",
+    "systems/swn/templates/player-parts/player-bio.hbs",
+    "systems/swn/templates/player-parts/player-notes.hbs",
+    "systems/swn/templates/player-parts/player-equipment.hbs",
+    "systems/swn/templates/player-parts/player-skills.hbs",
+    "systems/swn/templates/player-parts/player-foci.hbs",
+    "systems/swn/templates/player-parts/player-psionics.hbs",
+    "systems/swn/templates/player-parts/player-settings.hbs"
   ]
 
   // Load the template parts

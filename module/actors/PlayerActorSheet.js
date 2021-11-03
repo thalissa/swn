@@ -7,7 +7,7 @@ export class PlayerActorSheet extends SwnActor {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["swn", "sheet", "actor"],
-      template: "systems/swn/templates/player-actor-sheet.hbs",
+      template: "systems/swn/templates/actor-sheets/player-actor-sheet.hbs",
       width: 600,
       height: 600,
       tabs: [{

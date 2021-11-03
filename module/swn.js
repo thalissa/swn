@@ -4,8 +4,8 @@
  */
 
 // Import Modules
-import { SwnItem } from "./item.js"
-import { SwnItemSheet } from "./item-sheet.js"
+import { SwnItem } from "./items/item.js"
+import { SwnItemSheet } from "./items/equipment-item-sheet.js"
 import { PlayerActorSheet } from "./actors/PlayerActorSheet.js"
 import { NpcActorSheet } from "./actors/NpcActorSheet.js"
 import { preloadHandlebarsTemplates } from "./templates.js"

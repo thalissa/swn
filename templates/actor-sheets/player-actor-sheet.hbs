@@ -14,11 +14,6 @@
             <input type="number" placeholder="{{ localize "SWN.level" }}" name="data.level" value="{{actorData.level}}"/>
             <input type="number" placeholder="{{ localize "SWN.xp" }}" name="data.xp" value="{{actorData.xp}}"/>
           </div>
-          <!-- Class and background -->
-          <div class="resource-list">
-            <input type="text" placeholder="{{ localize "SWN.class" }}" name="data.class" value="{{actorData.class}}"/>
-            <input type="text" placeholder="{{ localize "SWN.background" }}" name="data.background" value="{{actorData.background}}"/>
-          </div>
         </div>
         <!-- Saving throws -->
         <div class="flexrow">
@@ -38,7 +33,7 @@
     </header>
 
     {{!-- Attributes --}}
-    {{> "systems/swn/templates/parts/sheet-attributes.hbs" attributes=actorData.attributes}}
+    {{> "systems/swn/templates/player-parts/player-attributes.hbs" attributes=actorData.attributes}}
     
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
@@ -57,20 +52,20 @@
     <section class="sheet-body">
       <hr/>
       {{!-- Biography Tab --}}
-      {{> "systems/swn/templates/parts/player-bio.hbs" bio=actorData.bio}}
+      {{> "systems/swn/templates/player-parts/player-bio.hbs" bio=actorData.bio}}
       {{!-- Notes Tab --}}
-      {{> "systems/swn/templates/parts/player-notes.hbs" notes=actorData.notes}}
+      {{> "systems/swn/templates/player-parts/player-notes.hbs" notes=actorData.notes}}
       {{!-- Equipment Tab --}}
-      {{> "systems/swn/templates/parts/player-equipment.hbs" items=data.items}}
+      {{> "systems/swn/templates/player-parts/player-equipment.hbs" items=data.items}}
       {{!-- Skills Tab --}}
-      {{> "systems/swn/templates/parts/player-skills.hbs" skills=actorData.skills specialties=actorData.specialties psionics=actorData.psionics}}
+      {{> "systems/swn/templates/player-parts/player-skills.hbs" skills=actorData.skills specialties=actorData.specialties psionics=actorData.psionics}}
       {{!-- Foci Tab --}}
-      {{> "systems/swn/templates/parts/player-foci.hbs" foci=data.foci}}
+      {{> "systems/swn/templates/player-parts/player-foci.hbs" foci=data.foci}}
       {{!-- Psionics Tab --}}
       {{#if actorData.psionics.enabled}}
-        {{> "systems/swn/templates/parts/player-psionics.hbs" psionics=data.psionics}}
+        {{> "systems/swn/templates/player-parts/player-psionics.hbs" psionics=data.psionics}}
       {{/if}}
       {{!-- Settings Tab --}}
-      {{> "systems/swn/templates/parts/player-settings.hbs" settings=actorData.settings skills=actorData.skills}}
+      {{> "systems/swn/templates/player-parts/player-settings.hbs" settings=actorData.settings skills=actorData.skills}}
     </section>
 </form>

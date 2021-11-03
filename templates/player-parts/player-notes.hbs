@@ -1,8 +1,8 @@
 <div class="tab notes" data-group="primary" data-tab="notes">
   {{!-- Notes To Remember Textfield --}}
-  <div class="flexcol inputTextfield">
+  <div class="flexcol">
     <div class="inputName">
-      Notes To Remember
+      {{ localize "SWN.Notes.ToRemember" }}
     </div>
   </div>
   {{editor content=notes.remember target="data.notes.remember" button=true owner=owner editable=editable rollData=rollData}}
@@ -10,7 +10,7 @@
   {{!-- Allies Textfield --}}
   <div class="flexcol inputTextfield">
     <div class="inputName">
-      Allies
+      {{ localize "SWN.Notes.Allies" }}
     </div>
   </div>
   {{editor content=notes.allies target="data.notes.allies" button=true owner=owner editable=editable rollData=rollData}}
@@ -18,7 +18,7 @@
   {{!-- Enemies Textfield --}}
   <div class="flexcol inputTextfield">
     <div class="inputName">
-      Enemies
+      {{ localize "SWN.Notes.Enemies" }}
     </div>
   </div>
   {{editor content=notes.enemies target="data.notes.enemies" button=true owner=owner editable=editable rollData=rollData}}
@@ -26,7 +26,7 @@
   {{!-- Other Textfield --}}
   <div class="flexcol inputTextfield">
     <div class="inputName">
-      Other Notes
+      {{ localize "SWN.Notes.Other" }}
     </div>
   </div>
   {{editor content=notes.other target="data.notes.other" button=true owner=owner editable=editable rollData=rollData}}

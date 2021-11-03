@@ -3,16 +3,16 @@
     <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
     <div class="header-fields">
       <h1 class="charname">
-        <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
+        <input name="name" type="text" value="{{data.name}}" placeholder="{{ localize "SWN.Item.Name" }}" />
       </h1>
       <div class="flexrow">
         <div class="resource">
-          <label>Quantity</label>
-          <input type="number" name="data.quantity" value="{{itemData.quantity}}"/>
+          <label>{{ localize "SWN.Item.Quantity" }}</label>
+          <input type="number" name="data.quantity" value="{{itemData.quantity}}" placeholder="{{ localize "SWN.Item.Quantity" }}"/>
         </div>
         <div class="resource">
-          <label>Weight</label>
-          <input type="number" name="data.weight" value="{{itemData.weight}}"/>
+          <label>{{ localize "SWN.Item.Weight" }}</label>
+          <input type="number" name="data.weight" value="{{itemData.weight}}" placeholder="{{ localize "SWN.Item.Weight" }}"/>
         </div>
       </div>
     </div>
@@ -20,7 +20,7 @@
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
-    <a class="item" data-tab="description">Description</a>
+    <a class="item" data-tab="description">{{ localize "SWN.Item.Description" }}</a>
   </nav>
 
   {{!-- Sheet Body --}}

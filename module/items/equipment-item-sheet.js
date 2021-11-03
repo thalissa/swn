@@ -1,5 +1,5 @@
-import { EntitySheetHelper } from "./helper.js"
-import {ATTRIBUTE_TYPES} from "./constants.js"
+import { EntitySheetHelper } from "../helper.js"
+import { ATTRIBUTE_TYPES } from "../constants.js"
 
 /** @extends {ItemSheet} */
 // Extend the basic ItemSheet with some very simple modifications
@@ -9,7 +9,7 @@ export class SwnItemSheet extends ItemSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["swn", "sheet", "item"],
-      template: "systems/swn/templates/item-sheet.hbs",
+      template: "systems/swn/templates/item-sheets/equipment-item-sheet.hbs",
       width: 520,
       height: 480,
       tabs: [{

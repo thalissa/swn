@@ -7,7 +7,7 @@ export class NpcActorSheet extends SwnActor {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["swn", "sheet", "actor"],
-      template: "systems/swn/templates/npc-actor-sheet.hbs",
+      template: "systems/swn/templates/actor-sheets/npc-actor-sheet.hbs",
       width: 600,
       height: 600,
       tabs: [{

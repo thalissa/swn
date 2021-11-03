@@ -145,6 +145,11 @@
   border-radius: 0px 10px;
 }
 
+/* Bio Page Styling */
+.swn .bio .bioRow {
+  margin-bottom: 5px;
+}
+
 /* Notes Page Styling */
 .swn .notes .editor {
   max-height: 150px;

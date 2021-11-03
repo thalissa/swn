@@ -1,0 +1,52 @@
+<div class="tab bio" data-group="primary" data-tab="bio">
+  <div class="flexcol">
+    {{!-- Initial row of bio fields --}}
+    <div class="flexrow bioRow">
+      {{!-- Class Input --}}
+      <div class="flexcol">
+        <div class="inputName">
+          {{ localize "SWN.Bio.Class" }}
+        </div>
+        <input type="text" name="data.bio.class" value="{{actorData.bio.class}}" placeholder="{{ localize "SWN.Bio.Class" }}"/>
+      </div>
+      {{!-- Background Input --}}
+      <div class="flexcol">
+        <div class="inputName">
+          {{ localize "SWN.Bio.Background" }}
+        </div>
+        <input type="text" name="data.bio.background" value="{{actorData.bio.background}}" placeholder="{{ localize "SWN.Bio.Background" }}"/>
+      </div>
+    </div>
+    {{!-- Second row of bio fields --}}
+    <div class="flexrow">
+      {{!-- Homeworld Input --}}
+      <div class="flexcol">
+        <div class="inputName">
+          {{ localize "SWN.Bio.Homeworld" }}
+        </div>
+        <input type="text" name="data.bio.homeworld" value="{{actorData.bio.homeworld}}" placeholder="{{ localize "SWN.Bio.Homeworld" }}"/>
+      </div>
+      {{!-- Employer Input --}}
+      <div class="flexcol">
+        <div class="inputName">
+          {{ localize "SWN.Bio.Employer" }}
+        </div>
+        <input type="text" name="data.bio.employer" value="{{actorData.bio.employer}}" placeholder="{{ localize "SWN.Bio.Employer" }}"/>
+      </div>
+      {{!-- Species Input --}}
+      <div class="flexcol">
+        <div class="inputName">
+          {{ localize "SWN.Bio.Species" }}
+        </div>
+        <input type="text" name="data.bio.species" value="{{actorData.bio.species}}" placeholder="{{ localize "SWN.Bio.Species" }}"/>
+      </div>
+    </div>
+    {{!-- Other Textfield --}}
+    <div class="flexcol inputTextfield">
+      <div class="inputName">
+        {{ localize "SWN.Bio.Other" }}
+      </div>
+    </div>
+  </div>
+  {{editor content=bio.other target="data.bio.other" button=true owner=owner editable=editable rollData=rollData}}
+</div>
