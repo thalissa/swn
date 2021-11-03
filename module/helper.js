@@ -16,7 +16,7 @@ export class EntitySheetHelper {
     const templates = collection.filter(a => a.getFlag("swn", "actor"))
     const defaultType = this.metadata.types[0]
     const types = {
-      [defaultType]: game.i18n.localize("SWN.PlayerActorSheet")
+      [defaultType]: game.i18n.localize("SWN.ItemSheet")
     }
     console.log("Templates: " + templates)
     for ( let a of templates ) {

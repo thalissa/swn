@@ -112,6 +112,7 @@
 
   "SWN.PlayerActorSheet": "Player Sheet",
   "SWN.NpcActorSheet": "NPC Sheet",
+  "SWN.ItemSheet": "Item Sheet",
 
   "SWN.AttributeKey": "Attribute Key",
   "SWN.AttributeValue": "Value",
