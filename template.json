@@ -24,8 +24,7 @@
         "other": ""
       },
       "psionics": {
-        "enabled": false,
-        "abilities": { }
+        "enabled": false
       },
       "attributes": {
         "str": {
@@ -104,9 +103,7 @@
         "value": 5,
         "min": 0,
         "max": 5
-      },
-      "attributes": {},
-      "groups": {}
+      }
     }
   },
   "Item": {

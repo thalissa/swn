@@ -65,10 +65,10 @@
       {{!-- Skills Tab --}}
       {{> "systems/swn/templates/parts/player-skills.hbs" skills=actorData.skills specialties=actorData.specialties psionics=actorData.psionics}}
       {{!-- Foci Tab --}}
-      {{> "systems/swn/templates/parts/player-foci.hbs" foci=actorData.foci}}
+      {{> "systems/swn/templates/parts/player-foci.hbs" foci=data.foci}}
       {{!-- Psionics Tab --}}
       {{#if actorData.psionics.enabled}}
-        {{> "systems/swn/templates/parts/player-psionics.hbs" psionics=actorData.psionics.abilities}}
+        {{> "systems/swn/templates/parts/player-psionics.hbs" psionics=data.psionics}}
       {{/if}}
       {{!-- Settings Tab --}}
       {{> "systems/swn/templates/parts/player-settings.hbs" settings=actorData.settings skills=actorData.skills}}
