@@ -4,8 +4,8 @@
     "templates": {
       "baseDetails": {
         "health": {
-          "value": 12,
-          "max": 12
+          "value": 0,
+          "max": 0
         },
         "ac": 10,
         "move": "10 metres"

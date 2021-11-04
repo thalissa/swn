@@ -190,11 +190,10 @@ export class SwnActor extends ActorSheet {
   // Going through each of the saves, it compares the relevant attribute scores
   // and uses that
   getSaveMod(saveType) {
-    let level = this.actor.data.data.level
-    let baseSave = 16
-    
     if(saveType){
-      if(game.settings.get("swn", "use1eSavingThrows")){
+      // NPCs don't have attributes, so this is a shortcut to get them to the
+      // more basic saving throw version
+      if(this.actor.data.type == "npc" || game.settings.get("swn", "use1eSavingThrows")){
         // SWN 1e saving throw method
         const saves = this.actor.data.data.saves
         
@@ -217,7 +216,9 @@ export class SwnActor extends ActorSheet {
             return baseSave
         }
       } else {
+        const baseSave = 16
         const attributes = this.actor.data.data.attributes
+        let level = this.actor.data.data.level
         
         switch (saveType){
           // Physical saving throws use the better of strength or constitution

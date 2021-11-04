@@ -5,21 +5,19 @@
     <span>{{localize "SWN.PlayerSettings.psionics"}}</span>
   </label>
   <hr/>
-  {{#if (getSetting "use1eSavingThrows")}}
-    <div class="inputName">Class Saving Throws</div>
-    <div class="settings-saves flexrow">
-      {{#each actorData.saves as |save key|}}
-        <ol class="settings-saves-group">
-          <li>
-            <input type="number" name="data.saves.{{key}}" value="{{save}}"/>
-          </li>
-          <li>
-            {{localize (concat 'SWN.Save.' key)}}
-          </li>
-        </ol>
-      {{/each}}
-    </div>
-  {{/if}}
+  <div class="inputName">NPC Saving Throws</div>
+  <div class="settings-saves flexrow">
+    {{#each actorData.saves as |save key|}}
+      <ol class="settings-saves-group">
+        <li>
+          <input type="number" name="data.saves.{{key}}" value="{{save}}"/>
+        </li>
+        <li>
+          {{localize (concat 'SWN.Save.' key)}}
+        </li>
+      </ol>
+    {{/each}}
+  </div>
   <hr/>
   <div class="flexcol">
     <div class="inputName">Enable Skills</div>

@@ -65,17 +65,11 @@
   margin-top: auto;
   margin-bottom: auto;
 }
-.swn .headerInput input {
-  margin-bottom: 5px;
-}
 .swn .headerInput input[type="number"] {
   text-align: center;
   max-width: 35px;
 }
-.swn .headerInput .headerInputPrimary {
-  flex-grow: 1;
-}
-.swn .headerInput .headerInputSecondary {
+.swn .headerInput .headerInputRight {
   align-items: flex-end;
 }
 
