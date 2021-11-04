@@ -1,3 +1,8 @@
+#### 0.1.14 (NPCs Are People Too Update)
+* Added better templating to the template templates so I can template better between the templates.
+* NPC sheets are now visually distinct (AKA all the non-important stuff is taken out) from the player sheet. No more lazy copy-pasting between the two!
+* Added more attributes and modified the header of the PC and NPC sheets to adjust for the new fields.
+
 #### 0.1.13 (Localizations-R-Us Update)
 * A lot of localization additions and fixes.
 * Additionally, I better separated the sheet partials between various folders.

@@ -1,0 +1,29 @@
+<div class="tab skills" data-group="primary" data-tab="skills">
+  <div class="flexcol">
+    <div class="flexcol">
+      <div class="inputName">Skills</div>
+      <div class="skillList">
+        {{!-- Iterate through all the core skills. --}}
+        {{#each skills as |skill key|}}
+          {{!-- Only show the skills that are enabled; can be disabled from the settings tab. --}}
+          {{#if skill.enabled}}
+            {{!-- Check if the skill is psionic and only display it if psionics are enabled for the character. --}}
+            {{#if skill.psionic}}
+              {{#if ../actorData.psionics.enabled}}
+                <div class="flexrow skill psionic">
+                  <span id="{{key}}">{{localize (concat "SWN.Skills." key)}}</span>
+                  <input type="number" name="data.skills.{{key}}.value" value="{{skill.value}}"></input>
+                </div>
+              {{/if}}
+            {{else}}
+              <div class="flexrow skill">
+                <span id="{{key}}">{{localize (concat "SWN.Skills." key)}}</span>
+                <input type="number" name="data.skills.{{key}}.value" value="{{skill.value}}"></input>
+              </div>
+            {{/if}}
+          {{/if}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>

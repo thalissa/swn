@@ -8,6 +8,11 @@ If you'd like to follow my [Twitter](https://twitter.com/ThalissaRemnant), I ret
 Those that assist in contributing to the project will be listed here! Though I expect no help, if anyone provides any assistance I'll be more than happy to pull code in.
 
 ### Changelog
+#### 0.1.14 (NPCs Are People Too Update)
+* Added better templating to the template templates so I can template better between the templates.
+* NPC sheets are now visually distinct (AKA all the non-important stuff is taken out) from the player sheet. No more lazy copy-pasting between the two!
+* Added more attributes and modified the header of the PC and NPC sheets to adjust for the new fields.
+
 #### 0.1.13 (Localizations-R-Us Update)
 * A lot of localization additions and fixes.
 * Additionally, I better separated the sheet partials between various folders.
@@ -26,7 +31,4 @@ Those that assist in contributing to the project will be listed here! Though I e
 * When rolling a skill, an attribute dialogue comes up that the player can select from.
 * Rolls will now show the modifiers used in the flavourtext section. Plan to tweak how this is displayed later, but this is good for now.
 
-#### 0.1.9 (Graphics Are Cool Update)
-* Updated a bunch of styling on the sheet! Now using a [cool background from Hubble](https://hubblesite.org/contents/media/images/2020/58/4778-Image) that's in the [public domain](https://hubblesite.org/copyright)! In the future I'll add a "Credits" section inside Foundry for this and any future images I use as well.
-
-For additional changelog notes, see CHANGELOG.md
+For additional changelog notes, see [CHANGELOG.md](https://github.com/thalissa/swn/blob/main/CHANGELOG.md)

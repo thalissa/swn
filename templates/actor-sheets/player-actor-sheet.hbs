@@ -9,10 +9,42 @@
           <h1 class="charname">
               <input type="text" placeholder="{{ localize "SWN.name" }}" name="name" value="{{data.name}}"/>
           </h1>
-          <!-- XP and level -->
-          <div class="flexcol charlevel">
-            <input type="number" placeholder="{{ localize "SWN.level" }}" name="data.level" value="{{actorData.level}}"/>
-            <input type="number" placeholder="{{ localize "SWN.xp" }}" name="data.xp" value="{{actorData.xp}}"/>
+          
+          <div class="flexrow headerInput">
+            <!-- HP and Move -->
+            <div class="flexcol headerInputPrimary">
+              <div class="flexrow">
+                <div class="headerInput headerInputName">
+                  {{ localize "SWN.hp" }}
+                </div>
+                <input type="number" placeholder="{{ localize "SWN.TotalHP" }}" name="data.health.value" value="{{actorData.health.value}}"/>
+                <div class="headerInputName">/</div>
+                <input type="number" placeholder="{{ localize "SWN.MaxHP" }}" name="data.health.max" value="{{actorData.health.max}}"/>
+              </div>
+              
+              <div class="flexrow">
+                <div class="headerInputName">
+                  {{ localize "SWN.move" }}
+                </div>
+                <input type="text" placeholder="{{ localize "SWN.move" }}" name="data.move" value="{{actorData.move}}"/>
+              </div>
+            </div>
+            
+            <!-- Level and XP -->
+            <div class="flexcol headerInputSecondary">
+              <div class="flexrow">
+                <div class="headerInputName">
+                  {{ localize "SWN.level" }}
+                </div>
+                <input type="number" name="data.level" value="{{actorData.level}}"/>
+              </div>
+              <div class="flexrow">
+                <div class="headerInputName">
+                  {{ localize "SWN.xp" }}
+                </div>
+                <input type="number" name="data.xp" value="{{actorData.xp}}"/>
+              </div>
+            </div>
           </div>
         </div>
         <!-- Saving throws -->

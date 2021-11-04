@@ -1,0 +1,28 @@
+<div class="tab psionics" data-group="primary" data-tab="psionics">
+  <div class="inputName">
+    {{ localize "SWN.Psionics.Title" }}
+  </div>
+  <ol class="item-list">
+    {{#if psionics}}
+      <!-- Iterate through all the foci -->
+      {{#each psionics as |psionic id|}}
+        <li class="item flexrow" data-item-id="{{psionic._id}}">
+          <!-- Psionic image/name on the left side -->
+          <img src="{{psionic.img}}" title="{{psionic.name}}" width="24" height="24" />
+          <h4 class="item-name">{{psionic.name}}</h4>
+          
+          <!-- Psionic controls on the right side -->
+          <div class="item-controls">
+            <a class="item-control" title="{{ localize "SWN.PsionicEdit" }}" data-action="edit"><i class="fas fa-edit"></i></a>
+            <a class="item-control" title="{{ localize "SWN.PsionicDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
+          </div>
+        </li>
+      {{/each}}
+    {{else}}
+      <div class="noPsionicsNotice">{{ localize "SWN.NoPsionics" }}</div>
+    {{/if}}
+  </ol>
+  <div class="inputName">
+    <a class="item-control" title="{{ localize "SWN.PsionicNew" }}" data-action="create"><i class="fas fa-plus"></i> {{ localize "SWN.PsionicNew" }}</a>
+  </div>
+</div>

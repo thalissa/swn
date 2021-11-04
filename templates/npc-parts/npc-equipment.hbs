@@ -1,0 +1,28 @@
+<div class="tab items" data-group="primary" data-tab="equipment">
+  <div class="inputName">
+    {{ localize "SWN.Equipment.Stored" }}
+  </div>
+  <ol class="item-list">
+    {{#if items}}
+      <!-- Iterate through all the items -->
+      {{#each items as |item id|}}
+        <li class="item flexrow" data-item-id="{{item._id}}">
+          <!-- Item image and name on the left side -->
+          <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+          <h4 class="item-name">{{item.name}}</h4>
+          
+          <!-- Item controls on the right side -->
+          <div class="item-controls">
+            <a class="item-control" title="{{ localize "SWN.ItemEdit" }}" data-action="edit"><i class="fas fa-edit"></i></a>
+            <a class="item-control" title="{{ localize "SWN.ItemDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
+          </div>
+        </li>
+      {{/each}}
+    {{else}}
+      <div class="noEquipmentNotice">{{ localize "SWN.NoEquipment" }}</div>
+    {{/if}}
+  </ol>
+  <div class="inputName">
+    <a class="item-control" title="{{ localize "SWN.ItemNew" }}" data-action="create"><i class="fas fa-plus"></i> {{ localize "SWN.ItemNew" }}</a>
+  </div>
+</div>

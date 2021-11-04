@@ -9,10 +9,42 @@
           <h1 class="charname">
               <input type="text" placeholder="{{ localize "SWN.name" }}" name="name" value="{{data.name}}"/>
           </h1>
-          <!-- XP and level -->
-          <div class="flexcol charlevel">
-            <input type="number" placeholder="{{ localize "SWN.level" }}" name="data.level" value="{{actorData.level}}"/>
-            <input type="number" placeholder="{{ localize "SWN.xp" }}" name="data.xp" value="{{actorData.xp}}"/>
+          
+          <div class="flexrow headerInput">
+            <!-- HP and Move -->
+            <div class="flexcol headerInputPrimary">
+              <div class="flexrow">
+                <div class="headerInputName">
+                  {{ localize "SWN.hp" }}
+                </div>
+                <input type="number" placeholder="{{ localize "SWN.TotalHP" }}" name="data.health.value" value="{{actorData.health.value}}"/>
+                <div class="headerInputName">/</div>
+                <input type="number" placeholder="{{ localize "SWN.MaxHP" }}" name="data.health.max" value="{{actorData.health.max}}"/>
+              </div>
+              
+              <div class="flexrow">
+                <div class="headerInputName">
+                  {{ localize "SWN.move" }}
+                </div>
+                <input type="text" placeholder="{{ localize "SWN.move" }}" name="data.move" value="{{actorData.move}}"/>
+              </div>
+            </div>
+            
+            <!-- Hitdice and Morale -->
+            <div class="flexcol headerInputSecondary">
+              <div class="flexrow">
+                <div class="headerInputName">
+                  {{ localize "SWN.hitdice" }}
+                </div>
+                <input type="number" name="data.hitdie" value="{{actorData.hitdice}}"/>
+              </div>
+              <div class="flexrow">
+                <div class="headerInputName">
+                  {{ localize "SWN.morale" }}
+                </div>
+                <input type="number" name="data.morale" value="{{actorData.morale}}"/>
+              </div>
+            </div>
           </div>
         </div>
         <!-- Saving throws -->
@@ -31,9 +63,6 @@
         </div>
       </div>
     </header>
-
-    {{!-- Attributes --}}
-    {{> "systems/swn/templates/player-parts/player-attributes.hbs" attributes=actorData.attributes}}
     
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
@@ -52,20 +81,20 @@
     <section class="sheet-body">
       <hr/>
       {{!-- Biography Tab --}}
-      {{> "systems/swn/templates/player-parts/player-bio.hbs" bio=actorData.bio}}
+      {{> "systems/swn/templates/npc-parts/npc-bio.hbs" bio=actorData.bio}}
       {{!-- Notes Tab --}}
-      {{> "systems/swn/templates/player-parts/player-notes.hbs" notes=actorData.notes}}
+      {{> "systems/swn/templates/npc-parts/npc-notes.hbs" notes=actorData.notes}}
       {{!-- Equipment Tab --}}
-      {{> "systems/swn/templates/player-parts/player-equipment.hbs" items=data.items}}
+      {{> "systems/swn/templates/npc-parts/npc-equipment.hbs" items=data.items}}
       {{!-- Skills Tab --}}
-      {{> "systems/swn/templates/player-parts/player-skills.hbs" skills=actorData.skills specialties=actorData.specialties psionics=actorData.psionics}}
+      {{> "systems/swn/templates/npc-parts/npc-skills.hbs" skills=actorData.skills psionics=actorData.psionics}}
       {{!-- Foci Tab --}}
-      {{> "systems/swn/templates/player-parts/player-foci.hbs" foci=data.foci}}
+      {{> "systems/swn/templates/npc-parts/npc-foci.hbs" foci=data.foci}}
       {{!-- Psionics Tab --}}
       {{#if actorData.psionics.enabled}}
-        {{> "systems/swn/templates/player-parts/player-psionics.hbs" psionics=data.psionics}}
+        {{> "systems/swn/templates/npc-parts/npc-psionics.hbs" psionics=data.psionics}}
       {{/if}}
       {{!-- Settings Tab --}}
-      {{> "systems/swn/templates/player-parts/player-settings.hbs" settings=actorData.settings skills=actorData.skills}}
+      {{> "systems/swn/templates/npc-parts/npc-settings.hbs" settings=actorData.settings skills=actorData.skills}}
     </section>
 </form>

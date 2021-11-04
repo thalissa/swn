@@ -1,12 +1,53 @@
 {
   "Actor": {
     "types": ["player", "npc"],
-    "player": {
-      "health": {
-        "value": 10,
-        "min": 0,
-        "max": 10
+    "templates": {
+      "baseDetails": {
+        "health": {
+          "value": 12,
+          "max": 12
+        },
+        "ac": 10,
+        "move": "10 metres"
       },
+      "skillsList": {
+        "skills": {
+          "adm": {"value": -1, "enabled": true},
+          "con": {"value": -1, "enabled": true}, 
+          "exe": {"value": -1, "enabled": true},
+          "fix": {"value": -1, "enabled": true},
+          "hea": {"value": -1, "enabled": true},
+          "kno": {"value": -1, "enabled": true},
+          "lea": {"value": -1, "enabled": true},
+          "not": {"value": -1, "enabled": true},
+          "per": {"value": -1, "enabled": true},
+          "pil": {"value": -1, "enabled": true},
+          "pro": {"value": -1, "enabled": true},
+          "pun": {"value": -1, "enabled": true},
+          "sho": {"value": -1, "enabled": true},
+          "sne": {"value": -1, "enabled": true},
+          "sta": {"value": -1, "enabled": true},
+          "sur": {"value": -1, "enabled": true},
+          "tal": {"value": -1, "enabled": true},
+          "tra": {"value": -1, "enabled": true},
+          "wor": {"value": -1, "enabled": true},
+          "bio": {"value": -1, "enabled": true, "psionic": true},
+          "met": {"value": -1, "enabled": true, "psionic": true},
+          "pre": {"value": -1, "enabled": true, "psionic": true},
+          "tlk": {"value": -1, "enabled": true, "psionic": true},
+          "tla": {"value": -1, "enabled": true, "psionic": true},
+          "tlp": {"value": -1, "enabled": true, "psionic": true}
+        }
+      },
+      "specialtiesList": {
+        "specialties": {
+          "cul": {"value": -1, "enabled": true, "contents": ""},
+          "wld": {"value": -1, "enabled": true, "contents": ""}
+        }
+      }
+    },
+    "player": {
+      "templates": ["baseDetails", "skillsList", "specialtiesList"],
       "level": 1,
       "xp": 0,
       "bio": {
@@ -58,51 +99,20 @@
         "evasion": 16,
         "luck": 16,
         "tech": 16
-      },
-      "skills": {
-        "adm": {"value": -1, "enabled": true},
-        "con": {"value": -1, "enabled": true}, 
-        "exe": {"value": -1, "enabled": true},
-        "fix": {"value": -1, "enabled": true},
-        "hea": {"value": -1, "enabled": true},
-        "kno": {"value": -1, "enabled": true},
-        "lea": {"value": -1, "enabled": true},
-        "not": {"value": -1, "enabled": true},
-        "per": {"value": -1, "enabled": true},
-        "pil": {"value": -1, "enabled": true},
-        "pro": {"value": -1, "enabled": true},
-        "pun": {"value": -1, "enabled": true},
-        "sho": {"value": -1, "enabled": true},
-        "sne": {"value": -1, "enabled": true},
-        "sta": {"value": -1, "enabled": true},
-        "sur": {"value": -1, "enabled": true},
-        "tal": {"value": -1, "enabled": true},
-        "tra": {"value": -1, "enabled": true},
-        "wor": {"value": -1, "enabled": true},
-        "bio": {"value": -1, "enabled": true, "psionic": true},
-        "met": {"value": -1, "enabled": true, "psionic": true},
-        "pre": {"value": -1, "enabled": true, "psionic": true},
-        "tlk": {"value": -1, "enabled": true, "psionic": true},
-        "tla": {"value": -1, "enabled": true, "psionic": true},
-        "tlp": {"value": -1, "enabled": true, "psionic": true}
-      },
-      "specialties": {
-        "cul": {"value": -1, "enabled": true, "contents": ""},
-        "wld": {"value": -1, "enabled": true, "contents": ""}
-      },
-      "groups": {}
+      }
     },
     "npc": {
-      "biography": "",
-      "health": {
-        "value": 12,
-        "min": 0,
-        "max": 12
-      },
-      "power": {
-        "value": 5,
-        "min": 0,
-        "max": 5
+      "templates": ["baseDetails", "skillsList"],
+      "hitdice": 1,
+      "morale": 6,
+      "attackBonus": 0,
+      "damageBonus": 0,
+      "saves": {
+        "physical": 15,
+        "mental": 15,
+        "evasion": 15,
+        "luck": 15,
+        "tech": 15
       }
     }
   },
@@ -111,9 +121,7 @@
     "item": {
       "description": "",
       "quantity": 1,
-      "weight": 0,
-      "attributes": {},
-      "groups": {}
+      "weight": 0
     }
   }
 }

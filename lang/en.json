@@ -11,6 +11,13 @@
   "SWN.name": "Name",
   "SWN.level": "Level",
   "SWN.xp": "XP",
+  "SWN.move": "Move",
+  "SWN.hp": "Hitpoints",
+  "SWN.TotalHP": "Total",
+  "SWN.MaxHP": "Max",
+  "SWN.morale": "Morale",
+  "SWN.hitdice": "Hitdice",
+  
   "SWN.addskill": "Add New Skill",
   "SWN.addspecialty": "Add New Specialty",
   "SWN.attribute": "Attribute",

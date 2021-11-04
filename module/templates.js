@@ -12,7 +12,16 @@ export const preloadHandlebarsTemplates = async function() {
     "systems/swn/templates/player-parts/player-skills.hbs",
     "systems/swn/templates/player-parts/player-foci.hbs",
     "systems/swn/templates/player-parts/player-psionics.hbs",
-    "systems/swn/templates/player-parts/player-settings.hbs"
+    "systems/swn/templates/player-parts/player-settings.hbs",
+    
+    // NPC Partials
+    "systems/swn/templates/npc-parts/npc-bio.hbs",
+    "systems/swn/templates/npc-parts/npc-notes.hbs",
+    "systems/swn/templates/npc-parts/npc-equipment.hbs",
+    "systems/swn/templates/npc-parts/npc-skills.hbs",
+    "systems/swn/templates/npc-parts/npc-foci.hbs",
+    "systems/swn/templates/npc-parts/npc-psionics.hbs",
+    "systems/swn/templates/npc-parts/npc-settings.hbs"
   ]
 
   // Load the template parts

@@ -1,0 +1,46 @@
+<div class="tab settings" data-group="primary" data-tab="settings">
+  <div class="inputName">Misc Settings</div>
+  <label>
+    <input type="checkbox" name="data.psionics.enabled" {{#if actorData.psionics.enabled}}checked{{/if}}/>
+    <span>{{localize "SWN.PlayerSettings.psionics"}}</span>
+  </label>
+  <hr/>
+  {{#if (getSetting "use1eSavingThrows")}}
+    <div class="inputName">Class Saving Throws</div>
+    <div class="settings-saves flexrow">
+      {{#each actorData.saves as |save key|}}
+        <ol class="settings-saves-group">
+          <li>
+            <input type="number" name="data.saves.{{key}}" value="{{save}}"/>
+          </li>
+          <li>
+            {{localize (concat 'SWN.Save.' key)}}
+          </li>
+        </ol>
+      {{/each}}
+    </div>
+  {{/if}}
+  <hr/>
+  <div class="flexcol">
+    <div class="inputName">Enable Skills</div>
+    <div class="skillList">
+      {{!-- Iterate through all the core skills. --}}
+      {{#each skills as |skill key|}}
+        {{!-- Check if the skill is psionic and only display it if psionics are enabled for the character. --}}
+        {{#if skill.psionic}}
+          {{#if ../actorData.psionics.enabled}}
+            <label>
+              <input type="checkbox" name="data.skills.{{key}}.enabled" {{#if skill.enabled}}checked{{/if}}/>
+              <span>{{localize (concat "SWN.Skills." key)}}</span>
+            </label>
+          {{/if}}
+        {{else}}
+          <label>
+            <input type="checkbox" name="data.skills.{{key}}.enabled" {{#if skill.enabled}}checked{{/if}}/>
+            <span>{{localize (concat "SWN.Skills." key)}}</span>
+          </label>
+        {{/if}}
+      {{/each}}
+    </div>
+  </div>
+</div>
