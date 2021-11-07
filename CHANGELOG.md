@@ -1,3 +1,6 @@
+#### 0.1.15 (Separation Of NPC-and-PC)
+* Better separated the NPC and PC sheet functions. Small update, but important for the future.
+
 #### 0.1.14 (NPCs Are People Too Update)
 * Added better templating to the template templates so I can template better between the templates.
 * NPC sheets are now visually distinct (AKA all the non-important stuff is taken out) from the player sheet. No more lazy copy-pasting between the two!

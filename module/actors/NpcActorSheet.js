@@ -21,4 +21,71 @@ export class NpcActorSheet extends SwnActor {
       }]
     })
   }
+  
+  /* -------------------------------------------- */
+  /* Basic extensions of the base sheet functions */
+  
+  /** @inheritdoc */
+  getData() {    
+    const data = super.getData()
+            
+    data.actorData = data.data.data
+    
+    return data
+  }
+  
+  // Grab a skill modifier when needed
+  getSkillMod(skillType) {
+    // Define the skill list for the actor
+    const skills = this.actor.data.data.skills
+    const baseSkill = -1
+    
+    // Check if the skill type exists
+    if(skillType) {
+      return skills[skillType].value
+    }
+    
+    // Default to -1, or untrained
+    return baseSkill
+  }
+  
+  // Re-use the SWN1e saving throw method from PlayerActorSheet.js to
+  // roll for NPC sheets too, since the GM determines their save scores
+  // rather than keying them off attributes.
+  getSaveMod(saveType) {
+    if(saveType){
+      const baseSave = 16
+      const saves = this.actor.data.data.saves
+      
+      // Simple way to grab the saving throw modifier from the attribute list.
+      switch (saveType){
+        case "physical":
+          return saves.physical
+        case "evasion":
+          return saves.evasion
+        case "mental":
+          return saves.mental
+        case "luck":
+          return saves.luck
+        case "tech":
+          return saves.tech
+        // Since by default all saves are 16 unless the class modifies it, this is
+        // good for "if all else fails..." such as if the variable somehow gets set to null
+        default:
+          return baseSave
+      }
+    }
+  }
+  
+  // Function called when a skill is rolled.
+  // It will create a dilogue to choose an attrribute,
+  // and then pass that on to a function to handle the
+  // rest of the skill roll.
+  _onSkillRoll(event) {
+    // The type of skill needing rolled.
+    const skillType = event.target.id
+    
+    // Push to the next function in rolling a skill.
+    this.rollSkill(skillType)
+  }
 }

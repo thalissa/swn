@@ -8,6 +8,9 @@ If you'd like to follow my [Twitter](https://twitter.com/ThalissaRemnant), I ret
 Those that assist in contributing to the project will be listed here! Though I expect no help, if anyone provides any assistance I'll be more than happy to pull code in.
 
 ### Changelog
+#### 0.1.15 (Separation Of NPC-and-PC)
+* Better separated the NPC and PC sheet functions. Small update, but important for the future.
+
 #### 0.1.14 (NPCs Are People Too Update)
 * Added better templating to the template templates so I can template better between the templates.
 * NPC sheets are now visually distinct (AKA all the non-important stuff is taken out) from the player sheet. No more lazy copy-pasting between the two!
@@ -25,10 +28,5 @@ Those that assist in contributing to the project will be listed here! Though I e
 * Cleaned up documentation around the files and learned I use the word "various" too much.
 * Fixed item sheets so that they properly prepare and update data again, and fixed a styling edit.
 * Removed attributes section from item sheets; appropriate fields will be added later.
-
-#### 0.1.10 (Fix The Broken Things Update)
-* Update 0.1.8 and 0.1.9 were accidentally merged at the same time, so if you're looking for separate commits between them, now you know why the one for 0.1.8 is missing!
-* When rolling a skill, an attribute dialogue comes up that the player can select from.
-* Rolls will now show the modifiers used in the flavourtext section. Plan to tweak how this is displayed later, but this is good for now.
 
 For additional changelog notes, see [CHANGELOG.md](https://github.com/thalissa/swn/blob/main/CHANGELOG.md)

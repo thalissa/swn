@@ -2,7 +2,7 @@
   "name": "swn",
   "title": "Stars Without Number",
   "description": "Stars Without Number system for FoundryVTT, compatible for both original and Revised editions.",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "minimumCoreVersion": "0.8.4",
   "compatibleCoreVersion": "0.8.9",
   "templateVersion": 8,
