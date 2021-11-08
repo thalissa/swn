@@ -68,6 +68,7 @@
   "SWN.Item.Weight": "Weight",
   "SWN.Item.Quantity": "Quantity",
   "SWN.Item.Description": "Description",
+  "SWN.Item.Level": "Level",
   
   "SWN.Attributes.strL": "Strength",
   "SWN.Attributes.conL": "Constitution",

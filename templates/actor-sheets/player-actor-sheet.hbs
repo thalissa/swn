@@ -88,14 +88,14 @@
       {{!-- Notes Tab --}}
       {{> "systems/swn/templates/player-parts/player-notes.hbs" notes=actorData.notes}}
       {{!-- Equipment Tab --}}
-      {{> "systems/swn/templates/player-parts/player-equipment.hbs" items=data.items}}
+      {{> "systems/swn/templates/player-parts/player-equipment.hbs" items=actorData.equipment}}
       {{!-- Skills Tab --}}
       {{> "systems/swn/templates/player-parts/player-skills.hbs" skills=actorData.skills specialties=actorData.specialties psionics=actorData.psionics}}
       {{!-- Foci Tab --}}
-      {{> "systems/swn/templates/player-parts/player-foci.hbs" foci=data.foci}}
+      {{> "systems/swn/templates/player-parts/player-foci.hbs" foci=actorData.focus}}
       {{!-- Psionics Tab --}}
       {{#if actorData.psionics.enabled}}
-        {{> "systems/swn/templates/player-parts/player-psionics.hbs" psionics=data.psionics}}
+        {{> "systems/swn/templates/player-parts/player-psionics.hbs" psionics=actorData.psionic}}
       {{/if}}
       {{!-- Settings Tab --}}
       {{> "systems/swn/templates/player-parts/player-settings.hbs" settings=actorData.settings skills=actorData.skills}}

@@ -3,16 +3,12 @@
     <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
     <div class="header-fields">
       <h1 class="charname">
-        <input name="name" type="text" value="{{data.name}}" placeholder="{{ localize "SWN.Item.Name" }} A" />
+        <input name="name" type="text" value="{{data.name}}" placeholder="{{ localize "SWN.Item.Name" }}" />
       </h1>
       <div class="flexrow">
         <div class="resource">
-          <label>{{ localize "SWN.Item.Quantity" }}</label>
-          <input type="number" name="data.quantity" value="{{itemData.quantity}}" placeholder="{{ localize "SWN.Item.Quantity" }}"/>
-        </div>
-        <div class="resource">
-          <label>{{ localize "SWN.Item.Weight" }}</label>
-          <input type="number" name="data.weight" value="{{itemData.weight}}" placeholder="{{ localize "SWN.Item.Weight" }}"/>
+          <label>{{ localize "SWN.Item.Level" }}</label>
+          <input type="number" name="data.level" value="{{itemData.level}}" placeholder="{{ localize "SWN.Item.Level" }}"/>
         </div>
       </div>
     </div>

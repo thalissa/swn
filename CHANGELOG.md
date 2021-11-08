@@ -1,3 +1,8 @@
+#### 0.1.16 (Items, Items, Items!)
+* Equipment, focus, and psionic itemsheets made.
+* Actor sheets now render equipment/focus/psionic items on their proper pages.
+* Item controls work for each of the new item sheet types.
+
 #### 0.1.15 (Separation Of NPC-and-PC)
 * Better separated the NPC and PC sheet functions. Small update, but important for the future.
 

@@ -3,11 +3,16 @@
  * Modified by Thalissa for use in the Stars Without Number system
  */
 
-// Import Modules
-import { SwnItem } from "./items/item.js"
-import { SwnItemSheet } from "./items/equipment-item-sheet.js"
+// Import Item Sheets
+import { EquipmentItemSheet } from "./items/EquipmentItemSheet.js"
+import { FocusItemSheet } from "./items/FocusItemSheet.js"
+import { PsionicItemSheet } from "./items/PsionicItemSheet.js"
+
+// Import Actor Sheets
 import { PlayerActorSheet } from "./actors/PlayerActorSheet.js"
 import { NpcActorSheet } from "./actors/NpcActorSheet.js"
+
+// Misc Imports
 import { preloadHandlebarsTemplates } from "./templates.js"
 import { createSwnMacro } from "./macro.js"
 
@@ -30,9 +35,6 @@ Hooks.once("init", async function() {
   game.swn = {
     createSwnMacro
   }
-
-  // Define custom Entity classes
-  CONFIG.Item.documentClass = SwnItem
   
   /* -------------------------------------------- */
   // Register sheet application classes
@@ -53,7 +55,21 @@ Hooks.once("init", async function() {
   
   // Item sheets
   Items.unregisterSheet("core", ItemSheet)
-  Items.registerSheet("swn", SwnItemSheet, { makeDefault: true })
+  Items.registerSheet("swn", EquipmentItemSheet, {
+    label: 'Equipment',
+    types: ['equipment'],
+    makeDefault: true
+  })
+  Items.registerSheet("swn", FocusItemSheet, {
+    label: 'Focus',
+    types: ['focus'],
+    makeDefault: true
+  })
+  Items.registerSheet("swn", PsionicItemSheet, {
+    label: 'Psionic',
+    types: ['psionic'],
+    makeDefault: true
+  })
   
   /* -------------------------------------------- */
   // Various settings are registered below here.

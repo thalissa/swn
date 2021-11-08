@@ -8,6 +8,11 @@ If you'd like to follow my [Twitter](https://twitter.com/ThalissaRemnant), I ret
 Those that assist in contributing to the project will be listed here! Though I expect no help, if anyone provides any assistance I'll be more than happy to pull code in.
 
 ### Changelog
+#### 0.1.16 (Items, Items, Items!)
+* Equipment, focus, and psionic itemsheets made.
+* Actor sheets now render equipment/focus/psionic items on their proper pages.
+* Item controls work for each of the new item sheet types.
+
 #### 0.1.15 (Separation Of NPC-and-PC)
 * Better separated the NPC and PC sheet functions. Small update, but important for the future.
 
@@ -23,10 +28,5 @@ Those that assist in contributing to the project will be listed here! Though I e
 #### 0.1.12 (Styling Fixes Update)
 * Added comments to the style sheets and better organized them while I did that.
 * Made the pages that needed styling have them (Example: You can read the equipment list now!)
-
-#### 0.1.11 (Documentation Here Update)
-* Cleaned up documentation around the files and learned I use the word "various" too much.
-* Fixed item sheets so that they properly prepare and update data again, and fixed a styling edit.
-* Removed attributes section from item sheets; appropriate fields will be added later.
 
 For additional changelog notes, see [CHANGELOG.md](https://github.com/thalissa/swn/blob/main/CHANGELOG.md)

@@ -33,6 +33,27 @@ export class PlayerActorSheet extends SwnActor {
             
     data.actorData = data.data.data
     
+    data.actorData.equipment = []
+    data.actorData.focus = []
+    data.actorData.psionic = []
+    
+    // Sort the types of items for better readability
+    if(data.data.items){
+      for(let key in data.data.items){
+        if(data.data.items[key].type === "equipment"){
+          data.actorData.equipment.push(data.data.items[key])
+        }
+        
+        if(data.data.items[key].type === "focus"){
+          data.actorData.focus.push(data.data.items[key])
+        }
+        
+        if(data.data.items[key].type === "psionic"){
+          data.actorData.psionic.push(data.data.items[key])
+        }
+      }
+    }
+    
     return data
   }
   

@@ -117,11 +117,18 @@
     }
   },
   "Item": {
-    "types": ["item"],
-    "item": {
-      "description": "",
+    "types": ["equipment", "focus", "psionic"],
+    "equipment": {
+      "description": "Aaaa",
       "quantity": 1,
       "weight": 0
+    },
+    "focus": {
+      "description": "",
+      "level": 0
+    },
+    "psionic": {
+      "description": ""
     }
   }
 }

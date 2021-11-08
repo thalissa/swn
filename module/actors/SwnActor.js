@@ -1,4 +1,4 @@
-import { EntitySheetHelper } from "../helper.js"
+import("../helper.js")
 
 /** @extends {Actor} */
 // Extend the base Actor document to support attributes and
@@ -26,6 +26,8 @@ export class SwnActor extends ActorSheet {
     html.find(".saves-list .save").click(this._onSaveRoll.bind(this))
     // Skill checks
     html.find(".skillList .skill span").click(this._onSkillRoll.bind(this))
+    // Item controls
+    html.find(".item-control").click(this._onItemControl.bind(this))
   }
 
   
@@ -52,12 +54,31 @@ export class SwnActor extends ActorSheet {
     const button = event.currentTarget
     const li = button.closest(".item")
     const item = this.actor.items.get(li?.dataset.itemId)
+    const cls = getDocumentClass("Item")
 
     // Handle different actions
-    switch ( button.dataset.action ) {
-      case "create":
-        const cls = getDocumentClass("Item")
-        return cls.create({name: game.i18n.localize("SWN.ItemNew"), type: "item"}, {parent: this.actor})
+    switch (button.dataset.action) {
+      case "create-equipment":
+        return cls.create({
+          name: game.i18n.localize("SWN.ItemNew"),
+          type: "equipment"
+          }, {
+          parent: this.actor
+        })
+      case "create-focus":
+        return cls.create({
+          name: game.i18n.localize("SWN.FocusNew"),
+          type: "focus"
+          }, {
+          parent: this.actor
+        })
+      case "create-psionic":
+        return cls.create({
+          name: game.i18n.localize("SWN.PsionicNew"),
+          type: "psionic"
+          }, {
+          parent: this.actor
+        })
       case "edit":
         return item.sheet.render(true)
       case "delete":
