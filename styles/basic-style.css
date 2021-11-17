@@ -9,13 +9,11 @@
 .swn form {
   height: 100%;
 }
-.swn .sheet .actor {
-  min-width: 560px;
-  min-height: 420px;
-}
-.swn .sheet .item {
-  min-width: 460px;
-  min-height: 400px;
+.swn.item-sheet nav.sheet-tabs {
+  height: 32px;
+  flex: 0 0 32px;
+  margin: 4px 0;
+  line-height: 32px;
 }
 
 /* Header Styling */
@@ -56,9 +54,8 @@
 .swn .headerInput {
   flex-grow: 1;
   max-height: 50px;
-  color: #CCC;
 }
-.swn .headerInput .headerInputName {
+.swn .headerInputName {
   flex-grow: 0;
   margin-left: 3px;
   margin-right: 3px;
@@ -122,12 +119,31 @@
   z-index: -1;
   border-radius: 10px 0px;
 }
-.swn label {
+.swn.sheet label {
   border-radius: 10px;
+  padding: 5px;
+}
+.swn.item-sheet label {
+  border-radius: 10px 0px 0px 10px;
   padding: 5px;
 }
 .swn label input[type="checkbox"] {
     height: auto;
+}
+.swn.item-sheet .resource {
+  display: flex;
+  flex-direction: row;
+}
+.swn.item-sheet .resource input[type="number"] {
+  width: 35px;
+  text-align: center;
+}
+.swn .numberInputDivider {
+  flex-grow: 0;
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 /* Header Attribute Styling and Setting Saves Styling */
@@ -191,7 +207,7 @@
   margin: 0;
 }
 .swn .item-list .item-controls {
-  flex: 0 0 36px;
+  text-align: right;
 }
 .swn .item-list .item-buttons {
   display: flex;
@@ -238,13 +254,39 @@
   max-width: 150px;
 }
 
+/* Psionics Page Styling */
+.effort {
+  margin: auto;
+  justify-content: center;
+  max-width: 150px;
+  margin-bottom: 3px;
+}
+.swn .effort input[type="number"] {
+  min-width: 40px;
+  text-align: center;
+  flex: 0;
+}
+
 /* Settings Page Styling */
 .swn .settings .skillList {
   text-align: left;
 }
-.swn .settings .skillList label {
+.swn .settings .skillList label, .swn .settings .miscSettings label {
   margin-left: 5px;
   margin-right: 5px;
   margin-top: 3px;
   margin-bottom: 3px;
+}
+.swn .settings .miscSettings {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  border: 1px solid;
+  border-radius: 7px;
+  padding: 0.5em;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+}
+.swn .locked .item-control.edit {
+  display: none;
 }

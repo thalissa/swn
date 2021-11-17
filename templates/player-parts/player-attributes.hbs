@@ -1,8 +1,26 @@
 <section class="attributes" data-group="primary">
-  {{#each attributes as |attr key|}}
   <ol class="attribute-group">
-    <li><input type="number" name="data.attributes.{{key}}.value" value="{{attr.value}}"/></li>
-    <li class="attribute-mod">{{localize (concat 'SWN.Attributes.' key)}} (<span id="{{key}}Mod" data-label="{{attr.mod}}">{{@attr.mod}}</span>)</li>
+    <li><input type="number" name="data.attributes.str.value" value="{{attributes.str.value}}" {{#if actorData.locked}}disabled{{/if}}/></li>
+    <li class="attribute-mod">{{localize 'SWN.Attributes.str'}} (<span id="strMod">{{attributes.str.mod}}</span>)</li>
   </ol>
-  {{/each}}
+  <ol class="attribute-group">
+    <li><input type="number" name="data.attributes.con.value" value="{{attributes.con.value}}" {{#if actorData.locked}}disabled{{/if}}/></li>
+    <li class="attribute-mod">{{localize 'SWN.Attributes.con'}} (<span id="conMod">{{attributes.con.mod}}</span>)</li>
+  </ol>
+  <ol class="attribute-group">
+    <li><input type="number" name="data.attributes.dex.value" value="{{attributes.dex.value}}" {{#if actorData.locked}}disabled{{/if}}/></li>
+    <li class="attribute-mod">{{localize 'SWN.Attributes.dex'}} (<span id="dexMod">{{attributes.dex.mod}}</span>)</li>
+  </ol>
+  <ol class="attribute-group">
+    <li><input type="number" name="data.attributes.cha.value" value="{{attributes.cha.value}}" {{#if actorData.locked}}disabled{{/if}}/></li>
+    <li class="attribute-mod">{{localize 'SWN.Attributes.cha'}} (<span id="chaMod">{{attributes.cha.mod}}</span>)</li>
+  </ol>
+  <ol class="attribute-group">
+    <li><input type="number" name="data.attributes.int.value" value="{{attributes.int.value}}" {{#if actorData.locked}}disabled{{/if}}/></li>
+    <li class="attribute-mod">{{localize 'SWN.Attributes.int'}} (<span id="intMod">{{attributes.int.mod}}</span>)</li>
+  </ol>
+  <ol class="attribute-group">
+    <li><input type="number" name="data.attributes.wis.value" value="{{attributes.wis.value}}" {{#if actorData.locked}}disabled{{/if}}/></li>
+    <li class="attribute-mod">{{localize 'SWN.Attributes.wis'}} (<span id="wisMod">{{attributes.wis.mod}}</span>)</li>
+  </ol>
 </section>

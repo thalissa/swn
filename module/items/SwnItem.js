@@ -5,9 +5,15 @@ export class SwnItem extends ItemSheet {
   // Fill in the data when needed.
   /** @inheritdoc */
   getData() {
-    const context = super.getData();
-    context.itemData = context.data.data;
-    return context;
+    const data = super.getData();
+    data.itemData = data.data.data;
+    
+    // Replace the default item image with a predefined image; otherwise it'll stay the safe
+    if(data.itemData.img){
+      data.data.img = data.itemData.img
+    }
+    
+    return data;
   }
 
 

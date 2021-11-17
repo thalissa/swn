@@ -1,7 +1,7 @@
 /* All the colours. Plan is to enable different style sheets later on */
 
 /* Core Sheet Styling */
-.swn {
+.swn.sheet, .swn.item-sheet {
   background: url("/systems/swn/resources/DarkRaysinIC5063.png") no-repeat;
   background-size: 100% 100%;
 }
@@ -13,6 +13,10 @@
 .swn .attributes-header {
   background: #cfcdc2;
   border: 1px solid #AAA;
+}
+
+.swn .headerInput {
+  color: #CCC;
 }
 
 /* Various input styling */
@@ -30,6 +34,12 @@
 .swn .attribute-group .attribute-mod {
   background-color: #CCC;
 }
+.swn .numberInputDivider {
+  color: #CCC;
+}
+.swn label .numberInputDivider {
+  color: #000;
+}
 
 /* Tab styling */
 .swn .tabs .item {
@@ -42,4 +52,19 @@
 /* Item page styling */
 .swn .item-list .item {
   border-bottom: 1px solid #BBB;
+}
+.swn .equipment .item img {
+  background: #5f46ec85;
+}
+.swn .focus .item img {
+  background: #2f7aeac7;
+}
+.swn .psionics .item img {
+  background: #ea2f2fc7;
+}
+
+/* Settings page styling */
+.swn .settings .miscSettings {
+  border-color: #888;
+  background-color: #AAA;
 }

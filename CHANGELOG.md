@@ -1,3 +1,7 @@
+#### 0.1.17 (The Itemening Continues Update)
+* Added a lot more functionality to the item pages (Focus, Equipment, Psionics), including being able to post them in chat now!
+* Added a "locked" setting, so you can prevent yourself from accidentally deleting or making new items everywhere like some kind of mad person. Frequently changed variables, like HP, effort, and the like will remain editable, but non-textfield inputs will be disabled.
+
 #### 0.1.16 (Items, Items, Items!)
 * Equipment, focus, and psionic itemsheets made.
 * Actor sheets now render equipment/focus/psionic items on their proper pages.

@@ -1,9 +1,15 @@
 <div class="tab settings" data-group="primary" data-tab="settings">
   <div class="inputName">Misc Settings</div>
-  <label>
-    <input type="checkbox" name="data.psionics.enabled" {{#if actorData.psionics.enabled}}checked{{/if}}/>
-    <span>{{localize "SWN.PlayerSettings.psionics"}}</span>
-  </label>
+  <div class="miscSettings">
+    <label>
+      <input type="checkbox" name="data.psionics.enabled" {{#if actorData.psionics.enabled}}checked{{/if}}/>
+      <span>{{localize "SWN.ActorSettings.psionics"}}</span>
+    </label>
+    <label>
+      <input type="checkbox" name="data.locked" {{#if actorData.locked}}checked{{/if}}/>
+      <span>{{localize "SWN.ActorSettings.locked"}}</span>
+    </label>
+  </div>
   <hr/>
   {{#if (getSetting "use1eSavingThrows")}}
     <div class="inputName">Class Saving Throws</div>

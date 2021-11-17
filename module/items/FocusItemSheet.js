@@ -7,7 +7,7 @@ export class FocusItemSheet extends SwnItem {
   // Inherit the defaults and modify where necessary.
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["swn", "sheet", "focus"],
+      classes: ["swn", "item-sheet", "focus"],
       template: "systems/swn/templates/item-sheets/focus-item-sheet.hbs",
       width: 520,
       height: 480,

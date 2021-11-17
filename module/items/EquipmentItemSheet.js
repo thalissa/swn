@@ -7,7 +7,7 @@ export class EquipmentItemSheet extends SwnItem {
   // Inherit the defaults and modify where necessary.
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["swn", "sheet", "equipment"],
+      classes: ["swn", "item-sheet", "equipment"],
       template: "systems/swn/templates/item-sheets/equipment-item-sheet.hbs",
       width: 520,
       height: 480,

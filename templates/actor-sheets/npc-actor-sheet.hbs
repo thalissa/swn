@@ -1,4 +1,4 @@
-<form class="flexcol {{cssClass}}" autocomplete="off">
+<form class="flexcol {{cssClass}} {{#if actorData.locked}}locked{{/if}}" autocomplete="off">
     {{!-- Sheet Header --}}
     <header class="sheet-header flexrow">
       <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" height="100" width="100" />
@@ -18,15 +18,15 @@
                   {{ localize "SWN.hp" }}
                 </div>
                 <input type="number" placeholder="{{ localize "SWN.TotalHP" }}" name="data.health.value" value="{{actorData.health.value}}"/>
-                <div class="headerInputName">/</div>
-                <input type="number" placeholder="{{ localize "SWN.MaxHP" }}" name="data.health.max" value="{{actorData.health.max}}"/>
+                <div class="numberInputDivider">/</div>
+                <input type="number" placeholder="{{ localize "SWN.MaxHP" }}" name="data.health.max" value="{{actorData.health.max}}" {{#if actorData.locked}}disabled{{/if}}/>
               </div>
               
               <div class="flexrow">
                 <div class="headerInputName">
                   {{ localize "SWN.move" }}
                 </div>
-                <input type="text" placeholder="{{ localize "SWN.move" }}" name="data.move" value="{{actorData.move}}"/>
+                <input type="text" placeholder="{{ localize "SWN.move" }}" name="data.move" value="{{actorData.move}}" {{#if actorData.locked}}disabled{{/if}}/>
               </div>
             </div>
             
@@ -36,13 +36,13 @@
                 <div class="headerInputName">
                   {{ localize "SWN.hitdice" }}
                 </div>
-                <input type="number" name="data.hitdie" value="{{actorData.hitdice}}"/>
+                <input type="number" name="data.hitdie" value="{{actorData.hitdice}}" {{#if actorData.locked}}disabled{{/if}}/>
               </div>
               <div class="flexrow">
                 <div class="headerInputName">
                   {{ localize "SWN.morale" }}
                 </div>
-                <input type="number" name="data.morale" value="{{actorData.morale}}"/>
+                <input type="number" name="data.morale" value="{{actorData.morale}}" {{#if actorData.locked}}disabled{{/if}}/>
               </div>
             </div>
           </div>

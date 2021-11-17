@@ -13,7 +13,7 @@
   "SWN.xp": "XP",
   "SWN.move": "Move",
   "SWN.hp": "Hitpoints",
-  "SWN.TotalHP": "Total",
+  "SWN.TotalHP": "HP",
   "SWN.MaxHP": "Max",
   "SWN.morale": "Morale",
   "SWN.hitdice": "Hitdice",
@@ -23,6 +23,7 @@
   "SWN.attribute": "Attribute",
   "SWN.cancel": "Cancel",
   "SWN.select": "Select",
+  "SWN.ShowToChat": "Show To Chat",
   
   "SWN.Tabs.bio": "Bio",
   "SWN.Tabs.notes": "Notes",
@@ -56,19 +57,24 @@
   "SWN.FocusDelete": "Delete Focus",
   "SWN.NoFoci": "No foci listed",
   
+  "SWN.Psionics.Effort": "Effort",
+  "SWN.Psionics.EffortCurrent": "Cur",
+  "SWN.Psionics.EffortMax": "Max",
   "SWN.Psionics.Title": "Psionic Abilities",
   "SWN.PsionicNew": "New Psionic Ability",
   "SWN.PsionicEdit": "Edit Psionic Ability",
   "SWN.PsionicDelete": "Delete Psionic Ability",
   "SWN.NoPsionics": "No psionic abilities listed",
   
-  "SWN.PlayerSettings.psionics": "Psionics Enabled",
+  "SWN.ActorSettings.psionics": "Psionics Enabled",
+  "SWN.ActorSettings.locked": "Sheet Locked",
   
   "SWN.Item.Name": "Name",
   "SWN.Item.Weight": "Weight",
   "SWN.Item.Quantity": "Quantity",
   "SWN.Item.Description": "Description",
   "SWN.Item.Level": "Level",
+  "SWN.Item.TechLevel": "Tech Level",
   
   "SWN.Attributes.strL": "Strength",
   "SWN.Attributes.conL": "Constitution",

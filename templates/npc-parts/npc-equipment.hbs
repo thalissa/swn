@@ -1,4 +1,4 @@
-<div class="tab items" data-group="primary" data-tab="equipment">
+<div class="tab equipment" data-group="primary" data-tab="equipment">
   <div class="inputName">
     {{ localize "SWN.Equipment.Stored" }}
   </div>
@@ -13,8 +13,9 @@
           
           <!-- Item controls on the right side -->
           <div class="item-controls">
-            <a class="item-control" title="{{ localize "SWN.ItemEdit" }}" data-action="edit"><i class="fas fa-edit"></i></a>
-            <a class="item-control" title="{{ localize "SWN.ItemDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
+            <a class="item-control" title="{{ localize "SWN.ShowToChat" }}" data-action="chat"><i class="fas fa-comment-alt"></i></a>
+            <a class="item-control edit" title="{{ localize "SWN.ItemEdit" }}" data-action="edit"><i class="fas fa-edit"></i></a>
+            <a class="item-control edit" title="{{ localize "SWN.ItemDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
           </div>
         </li>
       {{/each}}
@@ -22,7 +23,9 @@
       <div class="noEquipmentNotice">{{ localize "SWN.NoEquipment" }}</div>
     {{/if}}
   </ol>
-  <div class="inputName">
-    <a class="item-control" title="{{ localize "SWN.ItemNew" }}" data-action="create-equipment"><i class="fas fa-plus"></i> {{ localize "SWN.ItemNew" }}</a>
-  </div>
+  {{#unless actorData.locked}}
+    <div class="inputName">
+      <a class="item-control" title="{{ localize "SWN.ItemNew" }}" data-action="create-equipment"><i class="fas fa-plus"></i> {{ localize "SWN.ItemNew" }}</a>
+    </div>
+  {{/unless}}
 </div>

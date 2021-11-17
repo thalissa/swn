@@ -61,23 +61,38 @@ export class SwnActor extends ActorSheet {
       case "create-equipment":
         return cls.create({
           name: game.i18n.localize("SWN.ItemNew"),
-          type: "equipment"
+          type: "equipment",
+          img: "icons/svg/sword.svg"
           }, {
           parent: this.actor
         })
       case "create-focus":
         return cls.create({
           name: game.i18n.localize("SWN.FocusNew"),
-          type: "focus"
+          type: "focus",
+          img: "icons/svg/frozen.svg"
           }, {
           parent: this.actor
         })
       case "create-psionic":
         return cls.create({
           name: game.i18n.localize("SWN.PsionicNew"),
-          type: "psionic"
+          type: "psionic",
+          img: "icons/svg/daze.svg"
           }, {
           parent: this.actor
+        })
+      case "chat":
+        return renderTemplate('systems/swn/templates/chat-message.hbs', {
+            name: item.data.name,
+            img: item.data.img,
+            description: item.data.data.description
+          }).then(html => {
+            ChatMessage.create({
+            user: game.user.id,
+            speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+            content: html
+          })
         })
       case "edit":
         return item.sheet.render(true)

@@ -7,14 +7,14 @@
         <div class="inputName">
           {{ localize "SWN.Bio.Class" }}
         </div>
-        <input type="text" name="data.bio.class" value="{{actorData.bio.class}}" placeholder="{{ localize "SWN.Bio.Class" }}"/>
+        <input type="text" name="data.bio.class" value="{{actorData.bio.class}}" placeholder="{{ localize "SWN.Bio.Class" }}" {{#if actorData.locked}}disabled{{/if}}/>
       </div>
       {{!-- Background Input --}}
       <div class="flexcol">
         <div class="inputName">
           {{ localize "SWN.Bio.Background" }}
         </div>
-        <input type="text" name="data.bio.background" value="{{actorData.bio.background}}" placeholder="{{ localize "SWN.Bio.Background" }}"/>
+        <input type="text" name="data.bio.background" value="{{actorData.bio.background}}" placeholder="{{ localize "SWN.Bio.Background" }}" {{#if actorData.locked}}disabled{{/if}}/>
       </div>
     </div>
     {{!-- Second row of bio fields --}}
@@ -24,21 +24,21 @@
         <div class="inputName">
           {{ localize "SWN.Bio.Homeworld" }}
         </div>
-        <input type="text" name="data.bio.homeworld" value="{{actorData.bio.homeworld}}" placeholder="{{ localize "SWN.Bio.Homeworld" }}"/>
+        <input type="text" name="data.bio.homeworld" value="{{actorData.bio.homeworld}}" placeholder="{{ localize "SWN.Bio.Homeworld" }}" {{#if actorData.locked}}disabled{{/if}}/>
       </div>
       {{!-- Employer Input --}}
       <div class="flexcol">
         <div class="inputName">
           {{ localize "SWN.Bio.Employer" }}
         </div>
-        <input type="text" name="data.bio.employer" value="{{actorData.bio.employer}}" placeholder="{{ localize "SWN.Bio.Employer" }}"/>
+        <input type="text" name="data.bio.employer" value="{{actorData.bio.employer}}" placeholder="{{ localize "SWN.Bio.Employer" }}" {{#if actorData.locked}}disabled{{/if}}/>
       </div>
       {{!-- Species Input --}}
       <div class="flexcol">
         <div class="inputName">
           {{ localize "SWN.Bio.Species" }}
         </div>
-        <input type="text" name="data.bio.species" value="{{actorData.bio.species}}" placeholder="{{ localize "SWN.Bio.Species" }}"/>
+        <input type="text" name="data.bio.species" value="{{actorData.bio.species}}" placeholder="{{ localize "SWN.Bio.Species" }}" {{#if actorData.locked}}disabled{{/if}}/>
       </div>
     </div>
     {{!-- Other Textfield --}}

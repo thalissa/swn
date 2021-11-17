@@ -8,7 +8,8 @@
           "max": 0
         },
         "ac": 10,
-        "move": "10 metres"
+        "move": "10 metres",
+        "locked": false
       },
       "skillsList": {
         "skills": {
@@ -65,6 +66,10 @@
         "other": ""
       },
       "psionics": {
+        "effort": {
+          "max": 0,
+          "current": 0
+        },
         "enabled": false
       },
       "attributes": {
@@ -121,14 +126,18 @@
     "equipment": {
       "description": "Aaaa",
       "quantity": 1,
-      "weight": 0
+      "weight": 0,
+      "techlevel": 0,
+      "img": "icons/svg/sword.svg"
     },
     "focus": {
       "description": "",
-      "level": 0
+      "level": 0,
+      "img": "icons/svg/frozen.svg"
     },
     "psionic": {
-      "description": ""
+      "description": "",
+      "img": "icons/svg/daze.svg"
     }
   }
 }
